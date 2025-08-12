@@ -1,0 +1,32 @@
+# OS junk
+.DS_Store
+._*
+Thumbs.db
+
+# Editors/IDE
+.vscode/
+.idea/
+
+# Env/secrets (never commit private material)
+.env
+.env.*
+*.env
+*.secret
+secrets.*
+
+# Keys (allow only the public key)
+*.pem
+*.key
+id_ed25519
+id_rsa
+!public-key.pem
+
+# Archives: keep component zips; do not blanket-ignore *.zip
+# (component zips are part of the public registry)
+
+# Node/packagers (not used here, but safeguards)
+node_modules/
+dist/
+build/
+.tmp/
+.temp/

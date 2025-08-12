@@ -1,0 +1,40 @@
+{
+  "name": "Label",
+  "version": "1.0.0",
+  "description": "Label component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Label/component.php",
+      "dest": "theme/template-parts/components/Label/component.php",
+      "integrity": "sha256-O00OxnL/bwmRYZtuXwsBoN/dJYEtwo5qnAUeRzgkd/U="
+    },
+    {
+      "path": "template-parts/components/Label/README.md",
+      "dest": "theme/template-parts/components/Label/README.md",
+      "integrity": "sha256-3uRWH0PN0+VRTwgME1LfBPmWvRNa1LEH6RtpEC4SBJw="
+    },
+    {
+      "path": "template-parts/components/Label/example.php",
+      "dest": "theme/template-parts/components/Label/example.php",
+      "integrity": "sha256-yM9xjxhlKsoPh/10PKxW7W59FbanB/E2Bbr5ojZCuOw="
+    },
+    {
+      "path": "template-parts/components/Label/styles.css",
+      "dest": "theme/template-parts/components/Label/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Label/enhancer.js",
+      "dest": "theme/template-parts/components/Label/enhancer.js",
+      "integrity": "sha256-6ZwGvMWB8Wus9gRpKJ3j6LMp+NkXsiPE85zx6lPjegU="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Label/1.0.0/component.zip",
+    "integrity": "sha256-s0I8rCwihLUwiEyJ4PH9Db7Sdq5jEFcRWb/Pm6o3GMQ="
+  },
+  "pro": false,
+  "checksum": "sha256-TCCzuytlOsrkpId+UfpQfN9HEfHz9YmI/G6TxeiN/dY=",
+  "signature": "hz10ficH8bYDX+fFGjiJPj4XIu9w5n4YHSJfeGBcWPLHfDAxIY2rbi8eC7kBDqgVtkngu1CwV1Mjf6RVl7nVAg=="
+}

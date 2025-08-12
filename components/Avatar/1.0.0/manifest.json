@@ -1,0 +1,40 @@
+{
+  "name": "Avatar",
+  "version": "1.0.0",
+  "description": "Avatar component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Avatar/component.php",
+      "dest": "theme/template-parts/components/Avatar/component.php",
+      "integrity": "sha256-T6RTfcimeWFlRtzQ8GsFJfDyOU2XwjyXGI758hfxYCs="
+    },
+    {
+      "path": "template-parts/components/Avatar/README.md",
+      "dest": "theme/template-parts/components/Avatar/README.md",
+      "integrity": "sha256-iLDXP9ioR5/NgCm7uUnzC0YZre83s706D0PsMTA8PUw="
+    },
+    {
+      "path": "template-parts/components/Avatar/example.php",
+      "dest": "theme/template-parts/components/Avatar/example.php",
+      "integrity": "sha256-vE3fh9bS0rGtIY7pu2Njy6muZtphFon34BzAfyVxcaE="
+    },
+    {
+      "path": "template-parts/components/Avatar/styles.css",
+      "dest": "theme/template-parts/components/Avatar/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Avatar/enhancer.js",
+      "dest": "theme/template-parts/components/Avatar/enhancer.js",
+      "integrity": "sha256-4KlUfsEjmxiV0kYopmukZab2mKpoIr0kokNxoiWJFTY="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Avatar/1.0.0/component.zip",
+    "integrity": "sha256-P2sDx3tKo6QaP/PfVJC0GbuMrAJHa0tRU2vyAtW4n/k="
+  },
+  "pro": false,
+  "checksum": "sha256-6K/aTNBt2W+cMSBCJh8R7usT4aHoP7j119ZbYc0Jb/Y=",
+  "signature": "eIlInB9vlR67ORjYbXXn5Anr2IvdhW8e9IR54CXw7Km1nSKRuzTgLNQBNomzBMBjrj6YNqwHD87LVAYQrqlECw=="
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Breadcrumbs",
+  "version": "1.0.0",
+  "description": "Breadcrumbs component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Breadcrumbs/component.php",
+      "dest": "theme/template-parts/components/Breadcrumbs/component.php",
+      "integrity": "sha256-DHMMozpH5t3jImazPiAEkQx+2/SuDDte1pzPdqV0a/w="
+    },
+    {
+      "path": "template-parts/components/Breadcrumbs/README.md",
+      "dest": "theme/template-parts/components/Breadcrumbs/README.md",
+      "integrity": "sha256-vap0FvA4HpprRr6v7XBBK7IJTNpwZDmLZ0iVb2OWlLM="
+    },
+    {
+      "path": "template-parts/components/Breadcrumbs/example.php",
+      "dest": "theme/template-parts/components/Breadcrumbs/example.php",
+      "integrity": "sha256-mOJS8dU6kODXHtNIlsLHxAXP5vTH8OfG8ZhUAC9jX5Q="
+    },
+    {
+      "path": "template-parts/components/Breadcrumbs/styles.css",
+      "dest": "theme/template-parts/components/Breadcrumbs/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Breadcrumbs/enhancer.js",
+      "dest": "theme/template-parts/components/Breadcrumbs/enhancer.js",
+      "integrity": "sha256-H0U0S1Qrgo6qnFjKvUNxHFxN+4dldwPQta5dT49i7uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Breadcrumbs/1.0.0/component.zip",
+    "integrity": "sha256-HFSCADz2/P2cpssWWRSyKeqFIRnELKlPuwCka8TJDHc="
+  },
+  "pro": false,
+  "checksum": "sha256-XSYALwSkWurRBKplos3sVZGfz2LDidk6sGKiJeokAM4=",
+  "signature": "pMxodqpaOI2ffsLu9AdpyEBIMz2I2tlOClGMPloXc3OzgA+unkDXuVSA4mftlxLPsVc/J3+lPDWFtWZyXbDFDA=="
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Alert",
+  "version": "1.0.0",
+  "description": "Alert component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Alert/component.php",
+      "dest": "theme/template-parts/components/Alert/component.php",
+      "integrity": "sha256-icmgy8I22Sc3z4710QBaJZzjIjtsbqOXGzJu5SJuAQw="
+    },
+    {
+      "path": "template-parts/components/Alert/README.md",
+      "dest": "theme/template-parts/components/Alert/README.md",
+      "integrity": "sha256-OFALPWX9e4EjiA/NgageN3OIdBKmUPoVap4+3asgSG0="
+    },
+    {
+      "path": "template-parts/components/Alert/example.php",
+      "dest": "theme/template-parts/components/Alert/example.php",
+      "integrity": "sha256-vdEC3/abySzSG0nQ51KwWF8oJqmWcNkjaimJfsjkqtU="
+    },
+    {
+      "path": "template-parts/components/Alert/styles.css",
+      "dest": "theme/template-parts/components/Alert/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Alert/enhancer.js",
+      "dest": "theme/template-parts/components/Alert/enhancer.js",
+      "integrity": "sha256-VHY1W3p3Enk2TVywUOGixJhn25kWspLY8DT029ReLiI="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Alert/1.0.0/component.zip",
+    "integrity": "sha256-5Gy9lvhjx+B1UQ7/Kl0Q1YxrSGx8CoMnq9evk1Pa0XA="
+  },
+  "pro": false,
+  "checksum": "sha256-8cp5vE/2nomywH4k6bFfVvuetHJ5Wp0fH3Y9/CUVvG4=",
+  "signature": "OLjUj5/RMguUjJdWOYAFfMApR8WR2HOee0Sa57ebFJ/Axi86iFR4RM5gHJgMm0Z9l0RWGN6kVmDE23sres7LCg=="
+}

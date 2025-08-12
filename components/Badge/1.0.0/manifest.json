@@ -1,0 +1,40 @@
+{
+  "name": "Badge",
+  "version": "1.0.0",
+  "description": "Badge component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Badge/component.php",
+      "dest": "theme/template-parts/components/Badge/component.php",
+      "integrity": "sha256-0vb9DhY+oGtpNpbK4J9qkLq1Flh/c8BpAgnNn9K89Fw="
+    },
+    {
+      "path": "template-parts/components/Badge/README.md",
+      "dest": "theme/template-parts/components/Badge/README.md",
+      "integrity": "sha256-xKH8oFeauc8acLN1PKbMiMCijiqt+dsPUA2tDeodrw0="
+    },
+    {
+      "path": "template-parts/components/Badge/example.php",
+      "dest": "theme/template-parts/components/Badge/example.php",
+      "integrity": "sha256-/49pH4N12keQjECsyR+Y+fyQipaeGzV7CbBqpi/13Fo="
+    },
+    {
+      "path": "template-parts/components/Badge/styles.css",
+      "dest": "theme/template-parts/components/Badge/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Badge/enhancer.js",
+      "dest": "theme/template-parts/components/Badge/enhancer.js",
+      "integrity": "sha256-GpgqYAxE//wX1oVCIqp9gS0m4tbzILngLHTLv1xiyDY="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Badge/1.0.0/component.zip",
+    "integrity": "sha256-aRusmAanerD/oJMYPvhpULlZz98XFrwazcO26R2V3hg="
+  },
+  "pro": false,
+  "checksum": "sha256-4ip9WSeLOsA2OwNE2mUimuA1qJiCJ0dEBe5YqVGYZzo=",
+  "signature": "SCOP0pV1WMKxx+woGANV0ic90TZddu6MATp/LDBg/9uQvK3WXXuTL0AOW7y1vweMTVeTDkMmGE+VCvBzTpXSBQ=="
+}

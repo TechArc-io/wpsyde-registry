@@ -1,0 +1,40 @@
+{
+  "name": "Modal",
+  "version": "1.0.0",
+  "description": "Modal component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Modal/component.php",
+      "dest": "theme/template-parts/components/Modal/component.php",
+      "integrity": "sha256-N9MRBOBHWGL15NXOrxON2vggo+K4c/jBdj61KOkKO/k="
+    },
+    {
+      "path": "template-parts/components/Modal/README.md",
+      "dest": "theme/template-parts/components/Modal/README.md",
+      "integrity": "sha256-ygpkwZj3a9R3SgzYxkQU3QFEiaBaOJeEd5s1K1dBw+I="
+    },
+    {
+      "path": "template-parts/components/Modal/example.php",
+      "dest": "theme/template-parts/components/Modal/example.php",
+      "integrity": "sha256-So9oakKSJvoS8jJtFFyf4VgN1NoUKraY/9dq9O1NS3w="
+    },
+    {
+      "path": "template-parts/components/Modal/styles.css",
+      "dest": "theme/template-parts/components/Modal/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Modal/enhancer.js",
+      "dest": "theme/template-parts/components/Modal/enhancer.js",
+      "integrity": "sha256-SLJTA2p3/Jjela+Fc7MOR/VJZ7l2NTOL2+YG4XJBRCU="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Modal/1.0.0/component.zip",
+    "integrity": "sha256-oYMC+ZzWw5v/L7VagaOKn3P/20OQxMzAnvDQRiiuJNk="
+  },
+  "pro": false,
+  "checksum": "sha256-GpXJMAP/asbtDMCQNFUwKgKGpREXDWMz5oSfeZdaaa4=",
+  "signature": "NFqpqKHuf59EELIzYPkND03Och+l0WXWqZbCemE6GsjbAkaZanNaMj+dap7Drkn+kD7q9quVHPEJQZRyACcYAA=="
+}

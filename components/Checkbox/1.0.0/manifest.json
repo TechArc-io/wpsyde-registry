@@ -1,0 +1,40 @@
+{
+  "name": "Checkbox",
+  "version": "1.0.0",
+  "description": "Checkbox component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Checkbox/component.php",
+      "dest": "theme/template-parts/components/Checkbox/component.php",
+      "integrity": "sha256-lX24vVhe++ol3HvQEcm1LyFKpY+Nj66Q0u5fMqvUa/k="
+    },
+    {
+      "path": "template-parts/components/Checkbox/README.md",
+      "dest": "theme/template-parts/components/Checkbox/README.md",
+      "integrity": "sha256-19TzTvSId/Z9k/+ZonU38LfQLJYfLBgO78rPxMo67Ec="
+    },
+    {
+      "path": "template-parts/components/Checkbox/example.php",
+      "dest": "theme/template-parts/components/Checkbox/example.php",
+      "integrity": "sha256-Nwg4i0DaD+hXmeKfIRkrV4UJgqLVOZf44YyDCF7U0C8="
+    },
+    {
+      "path": "template-parts/components/Checkbox/styles.css",
+      "dest": "theme/template-parts/components/Checkbox/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Checkbox/enhancer.js",
+      "dest": "theme/template-parts/components/Checkbox/enhancer.js",
+      "integrity": "sha256-vZDPfcFqBVpuqmdZ+VLPoaJtSFdPbfPr4M9gRUvRVJQ="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Checkbox/1.0.0/component.zip",
+    "integrity": "sha256-M5x3f/DCisRzJwcb78Q+RcS2o5Vx0NRjTAGhmKt8/LY="
+  },
+  "pro": false,
+  "checksum": "sha256-+OF/wxINEglBqmyNQFXIkO1+OtGRrpV9KoejaRd44Jg=",
+  "signature": "jKcJifEQInCV4BT7bGpH0qqayznGWqjjxR+8ZkoWWUS99IglAXrKYrb2L0nFJ6XejGZFExE4oAYM8xGhcAWIAQ=="
+}

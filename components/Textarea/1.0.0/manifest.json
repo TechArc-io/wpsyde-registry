@@ -1,0 +1,40 @@
+{
+  "name": "Textarea",
+  "version": "1.0.0",
+  "description": "Textarea component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Textarea/component.php",
+      "dest": "theme/template-parts/components/Textarea/component.php",
+      "integrity": "sha256-EUjYvNB+hxEpXvPT9i1i2EeBkzKAgaZMtD+l61u0980="
+    },
+    {
+      "path": "template-parts/components/Textarea/README.md",
+      "dest": "theme/template-parts/components/Textarea/README.md",
+      "integrity": "sha256-l+W2MGYFkVQ/W/khZUKKHYwHHUk2avk7ia9HCHs6SNA="
+    },
+    {
+      "path": "template-parts/components/Textarea/example.php",
+      "dest": "theme/template-parts/components/Textarea/example.php",
+      "integrity": "sha256-Nj7UNrYBs22ZZyj5PKkP7NT0sFUNyVTH7K8HeZrPw4Q="
+    },
+    {
+      "path": "template-parts/components/Textarea/styles.css",
+      "dest": "theme/template-parts/components/Textarea/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Textarea/enhancer.js",
+      "dest": "theme/template-parts/components/Textarea/enhancer.js",
+      "integrity": "sha256-ebCnFOX69JG1/8Ljilzgavb1tukb+LrNfvfDQ4JD/Eo="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Textarea/1.0.0/component.zip",
+    "integrity": "sha256-9gjwnAl35m/b+hRutKXhO7nFIQay0GILxYIcALBY+BE="
+  },
+  "pro": false,
+  "checksum": "sha256-YJc0Ma+Kfvzn8RZG94mPsNP2jUi8BsikWueF1hxuotY=",
+  "signature": "BVoCjxlDqKz+uKl6Cvix8hIMbw5skh+KfdLStVD7EvD8bOsMuACe6/M5gbSTO2hdNF3/cPEdMmxbEFUdU7XdAQ=="
+}

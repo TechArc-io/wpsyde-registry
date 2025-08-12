@@ -1,0 +1,236 @@
+{
+  "registryVersion": 1,
+  "updatedAt": "2025-08-12T13:07:54.871Z",
+  "components": {
+    "Button": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "description": "Accessible button component",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Accordion": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Accordion component"
+    },
+    "Alert": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Alert component"
+    },
+    "Avatar": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Avatar component"
+    },
+    "Badge": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Badge component"
+    },
+    "Breadcrumbs": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Breadcrumbs component"
+    },
+    "Card": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Card component"
+    },
+    "Checkbox": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Checkbox component"
+    },
+    "Input": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Input component"
+    },
+    "Label": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Label component"
+    },
+    "Modal": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Modal component"
+    },
+    "Navbar": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Navbar component"
+    },
+    "Pagination": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Pagination component"
+    },
+    "Radio": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Radio component"
+    },
+    "SectionHeading": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "SectionHeading component"
+    },
+    "Select": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Select component"
+    },
+    "Separator": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Separator component"
+    },
+    "Switch": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Switch component"
+    },
+    "Table": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Table component"
+    },
+    "Tabs": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Tabs component"
+    },
+    "Textarea": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Textarea component"
+    },
+    "Toast": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Toast component"
+    },
+    "Tooltip": {
+      "latest": "1.0.0",
+      "versions": [
+        "1.0.0"
+      ],
+      "channels": {
+        "stable": "1.0.0"
+      },
+      "description": "Tooltip component"
+    }
+  }
+}

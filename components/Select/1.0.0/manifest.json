@@ -1,0 +1,40 @@
+{
+  "name": "Select",
+  "version": "1.0.0",
+  "description": "Select component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Select/component.php",
+      "dest": "theme/template-parts/components/Select/component.php",
+      "integrity": "sha256-cjXZeP2uxvNZVrZUy3R9Tewjqt9DvFu5s7A/bLAjNjM="
+    },
+    {
+      "path": "template-parts/components/Select/README.md",
+      "dest": "theme/template-parts/components/Select/README.md",
+      "integrity": "sha256-+XG3iEWiPawJCIz4hVmvHJ97gPSnvmtoALpida3kL9Y="
+    },
+    {
+      "path": "template-parts/components/Select/example.php",
+      "dest": "theme/template-parts/components/Select/example.php",
+      "integrity": "sha256-hI4lHv2n+GuF6sYeeyp+DZWZCazYWFaoUSDB3qXC2WE="
+    },
+    {
+      "path": "template-parts/components/Select/styles.css",
+      "dest": "theme/template-parts/components/Select/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Select/enhancer.js",
+      "dest": "theme/template-parts/components/Select/enhancer.js",
+      "integrity": "sha256-GAQ3MEzniKgDJatzLemyNYulIRCVmO2tngPlq3ht478="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Select/1.0.0/component.zip",
+    "integrity": "sha256-aRlKKqthboAzAc7kPxHuzOhEJA7KPr8kSpGLc1vgv9s="
+  },
+  "pro": false,
+  "checksum": "sha256-+dX/laF5yQ2j/rqyvgPY2tim+fTHg4Ou/50WEesNYLc=",
+  "signature": "WZhl4B0kJu8kp4tscw3rGFJhkBZEVvkAFmj0dyUE9x5mBJWSuRII592KXwtcN8LUVu7zp11Sq3ATvWwkh3+5DA=="
+}

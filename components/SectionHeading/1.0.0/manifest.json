@@ -1,0 +1,40 @@
+{
+  "name": "SectionHeading",
+  "version": "1.0.0",
+  "description": "SectionHeading component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/SectionHeading/component.php",
+      "dest": "theme/template-parts/components/SectionHeading/component.php",
+      "integrity": "sha256-i5qENtWfYp/k+8Nk9Qac6e8FSo5QTCC6QSFxSYPmRjc="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/README.md",
+      "dest": "theme/template-parts/components/SectionHeading/README.md",
+      "integrity": "sha256-a6AHyTeEgh+gBuy9cRnrnLNYYV5X5YqUOJRaxcPby4Y="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/example.php",
+      "dest": "theme/template-parts/components/SectionHeading/example.php",
+      "integrity": "sha256-yuwW8Nq1r8ijqLevngVe9y/0cm1mJzYgM6Tvcz6diCU="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/styles.css",
+      "dest": "theme/template-parts/components/SectionHeading/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/enhancer.js",
+      "dest": "theme/template-parts/components/SectionHeading/enhancer.js",
+      "integrity": "sha256-6acj2yc6uqx1+mgBhzolq+3YiSenUc4tJQ+/tnvAcdU="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/SectionHeading/1.0.0/component.zip",
+    "integrity": "sha256-o6qxR7L8ldBtj8rWIceXQZFblwZ9TF0V+YA9l1MIy4Y="
+  },
+  "pro": false,
+  "checksum": "sha256-9fbp0anHO3Wy3e/u04aKtH582Y+1gc+dnd1WzZmoClM=",
+  "signature": "kIqHsEmSTyP0Gzissu7X31JLVahtfZJ0ewF/DJ90mF6CWMeQo1Cascq6ruxinswvTscynRHXJ+doMD6fcwUnBA=="
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Input",
+  "version": "1.0.0",
+  "description": "Input component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Input/component.php",
+      "dest": "theme/template-parts/components/Input/component.php",
+      "integrity": "sha256-+PecK5nKIQDfQkfQaBvZ0AEqZwmivsaDmPMI3K2Ja70="
+    },
+    {
+      "path": "template-parts/components/Input/README.md",
+      "dest": "theme/template-parts/components/Input/README.md",
+      "integrity": "sha256-y8EJy4CmEo6WMNRQaXq240z1SmiOhosdSIMse6Vxvyk="
+    },
+    {
+      "path": "template-parts/components/Input/example.php",
+      "dest": "theme/template-parts/components/Input/example.php",
+      "integrity": "sha256-gi6XMLmcVD+YNWeiYmBFAoeq72ikSK07Iz3sfvecb0I="
+    },
+    {
+      "path": "template-parts/components/Input/styles.css",
+      "dest": "theme/template-parts/components/Input/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Input/enhancer.js",
+      "dest": "theme/template-parts/components/Input/enhancer.js",
+      "integrity": "sha256-7TxnQXdLmPW/9eQu2lXp1D4c7Skwk13WOusvTMWr82c="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Input/1.0.0/component.zip",
+    "integrity": "sha256-5jxqzkLPwA4USa1o6EueCuXPE7OuFUU/McNNmuIbNUc="
+  },
+  "pro": false,
+  "checksum": "sha256-b6szYUwozbNzV9UmfoP1U+J45VlKYcvg92t/hEWxEPI=",
+  "signature": "8wUL09VvYkbanJe6xm68PwnEESyhp6VIv6syq87qFfMLTcZpIMA5vzdj2AtP9jHO50/WxNTL5nGorhmu9XQvCQ=="
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Table",
+  "version": "1.0.0",
+  "description": "Table component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Table/component.php",
+      "dest": "theme/template-parts/components/Table/component.php",
+      "integrity": "sha256-odIocVPK+Ggy8oSfOH0L75IYf5esYv32mbvPh+8VF8o="
+    },
+    {
+      "path": "template-parts/components/Table/README.md",
+      "dest": "theme/template-parts/components/Table/README.md",
+      "integrity": "sha256-bY5munxVGfYQbZfH/sCSYuzPV2R0FszhucbymQBXydA="
+    },
+    {
+      "path": "template-parts/components/Table/example.php",
+      "dest": "theme/template-parts/components/Table/example.php",
+      "integrity": "sha256-AITwCwZri8vYc/kpzlu/R4GAtmRHIWL5tWgPJhOrzgI="
+    },
+    {
+      "path": "template-parts/components/Table/styles.css",
+      "dest": "theme/template-parts/components/Table/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Table/enhancer.js",
+      "dest": "theme/template-parts/components/Table/enhancer.js",
+      "integrity": "sha256-MxC2kE9+4uchJZcv5Pmo+xFsDIgKXh2wWXIsO6oIA6w="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Table/1.0.0/component.zip",
+    "integrity": "sha256-rgtie2stbGFCEBvx/YfVgrmgeXfMz2A7GYODgOf+k0k="
+  },
+  "pro": false,
+  "checksum": "sha256-POsj6ukIWuOTSY4vdFGHE3vFg7vy0uQiGuuL7iPouLs=",
+  "signature": "pGhL8epxjbSDt7wK6cLzPjbRTkymbv3tfuE6H7hBv1TfFyQKsZXPLx1WVrfRFOuFmj4OYb4fgX+Aj1QBh71lDA=="
+}
