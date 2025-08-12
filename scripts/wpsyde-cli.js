@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
 const REGISTRY_URL = 'https://registry.wpsyde.com';
 const CONFIG_FILE = 'wpsyde.json';
@@ -27,6 +27,23 @@ const colors = {
   magenta: '\x1b[35m',
   cyan: '\x1b[36m',
 };
+
+// Input validation and sanitization
+function sanitizeInput(input) {
+  if (typeof input !== 'string') {
+    throw new Error('Input must be a string');
+  }
+
+  // Remove any path traversal attempts
+  const sanitized = input.replace(/[<>:"|?*\x00-\x1f]/g, '');
+
+  // Ensure it's not empty and doesn't contain dangerous patterns
+  if (!sanitized || sanitized.includes('..') || sanitized.includes('//')) {
+    throw new Error('Invalid input: contains dangerous characters or patterns');
+  }
+
+  return sanitized;
+}
 
 function log(message, color = 'reset') {
   console.log(`${colors[color]}${message}${colors.reset}`);
@@ -146,6 +163,11 @@ async function list() {
 // Add a component (shadcn style)
 async function add(componentName, version = 'latest') {
   try {
+    // Validate and sanitize inputs
+    const sanitizedComponentName = sanitizeInput(componentName);
+    const sanitizedVersion =
+      version === 'latest' ? 'latest' : sanitizeInput(version);
+
     // Load config
     if (!fs.existsSync(CONFIG_FILE)) {
       error('wpsyde.json not found. Run "npx wpsyde-ui init" first');
@@ -153,7 +175,7 @@ async function add(componentName, version = 'latest') {
 
     const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
 
-    log(`\n🚀 Adding ${componentName}...`, 'bright');
+    log(`\n🚀 Adding ${sanitizedComponentName}...`, 'bright');
 
     // Fetch component info
     log('📋 Fetching component information...', 'blue');
@@ -161,30 +183,31 @@ async function add(componentName, version = 'latest') {
     const index = JSON.parse(indexData);
 
     // Find component
-    if (!index.components[componentName]) {
+    if (!index.components[sanitizedComponentName]) {
       error(
-        `Component "${componentName}" not found. Run "npx wpsyde-ui list" to see available components`
+        `Component "${sanitizedComponentName}" not found. Run "npx wpsyde-ui list" to see available components`
       );
     }
 
-    const component = index.components[componentName];
+    const component = index.components[sanitizedComponentName];
 
     // Get version
     const versions = component.versions;
-    const targetVersion = version === 'latest' ? component.latest : version;
+    const targetVersion =
+      sanitizedVersion === 'latest' ? component.latest : sanitizedVersion;
 
     if (!versions.includes(targetVersion)) {
       error(
-        `Version ${targetVersion} not found for ${componentName}. Available: ${versions.join(', ')}`
+        `Version ${targetVersion} not found for ${sanitizedComponentName}. Available: ${versions.join(', ')}`
       );
     }
 
-    log(`📦 Installing ${componentName}@${targetVersion}`, 'cyan');
+    log(`📦 Installing ${sanitizedComponentName}@${targetVersion}`, 'cyan');
 
     // Create directories
     const targetDir = path.join(
       config.componentsDir,
-      componentName,
+      sanitizedComponentName,
       targetVersion
     );
     fs.mkdirSync(targetDir, { recursive: true });
@@ -208,12 +231,14 @@ async function add(componentName, version = 'latest') {
     // Extract component.zip
     log('🔓 Extracting component...', 'blue');
     try {
-      execSync(`unzip -o "${zipPath}" -d "${targetDir}"`, { stdio: 'inherit' });
+      execFileSync('unzip', ['-o', zipPath, '-d', targetDir], {
+        stdio: 'inherit',
+      });
       fs.unlinkSync(zipPath); // Remove zip after extraction
     } catch (err) {
       warn('Failed to extract with unzip, trying with tar...');
       try {
-        execSync(`tar -xf "${zipPath}" -C "${targetDir}"`, {
+        execFileSync('tar', ['-xf', zipPath, '-C', targetDir], {
           stdio: 'inherit',
         });
         fs.unlinkSync(zipPath);
@@ -223,21 +248,23 @@ async function add(componentName, version = 'latest') {
     }
 
     // Update installed list
-    config.installed[componentName] = {
+    config.installed[sanitizedComponentName] = {
       version: targetVersion,
       installedAt: new Date().toISOString(),
     };
 
     fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
 
-    success(`\n🎉 Successfully installed ${componentName}@${targetVersion}!`);
+    success(
+      `\n🎉 Successfully installed ${sanitizedComponentName}@${targetVersion}!`
+    );
     info(`Component files are ready in: ${targetDir}`);
 
     // Show next steps
     log('\n📚 Next steps:', 'bright');
     log('1. Include the component in your theme:', 'white');
     log(
-      `   get_template_part('template-parts/components/${componentName}/${targetVersion}/component')`,
+      `   get_template_part('template-parts/components/${sanitizedComponentName}/${targetVersion}/component')`,
       'cyan'
     );
     log('2. Customize the component files as needed', 'white');
@@ -308,7 +335,7 @@ function main() {
           'Component name required. Usage: npx wpsyde-ui add <ComponentName>'
         );
       }
-      add(args[1], args[2]);
+      add(sanitizeInput(args[1]), args[2] ? sanitizeInput(args[2]) : 'latest');
       break;
     default:
       error(`Unknown command: ${command}. Run "npx wpsyde-ui help" for usage`);
@@ -320,4 +347,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { init, list, add, help };
+module.exports = { init, list, add, help, sanitizeInput };
