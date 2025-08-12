@@ -1,15 +1,19 @@
 {
-  "name": "wpsyde-registry",
-  "version": "1.0.0",
-  "description": "Public registry for WPSyde atomic components",
-  "private": true,
+  "name": "wpsyde-ui",
+  "version": "1.0.3",
+  "description": "Professional UI component manager for WordPress (shadcn/ui style)",
+  "private": false,
   "scripts": {
     "verify": "node scripts/verify-registry.js",
     "test": "node scripts/verify-registry.js",
     "generate-keys": "./scripts/generate-keys.sh",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "prettier --check . && node scripts/verify-registry.js"
+    "lint": "prettier --check . && node scripts/verify-registry.js",
+    "wpsyde": "node scripts/wpsyde-cli.js",
+    "wpsyde:init": "node scripts/wpsyde-cli.js init",
+    "wpsyde:list": "node scripts/wpsyde-cli.js list",
+    "wpsyde:add": "node scripts/wpsyde-cli.js add"
   },
   "repository": {
     "type": "git",
@@ -19,10 +23,19 @@
     "wpsyde",
     "wordpress",
     "components",
-    "registry"
+    "registry",
+    "ui",
+    "component-manager",
+    "wordpress-themes",
+    "shadcn-ui"
   ],
-  "author": "TechArc.io",
+  "author": "TechArc.io <asem@techarcio.io>",
   "license": "MIT",
+  "homepage": "https://registry.wpsyde.com",
+  "main": "scripts/wpsyde-cli.js",
+  "bin": {
+    "wpsyde-ui": "scripts/wpsyde-cli.js"
+  },
   "devDependencies": {
     "prettier": "^3.0.0"
   },

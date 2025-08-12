@@ -1,0 +1,29 @@
+# Source files (not needed in npm package)
+components/
+.github/
+scripts/check-immutable-changes.js
+scripts/generate-keys.sh
+scripts/verify-registry.js
+
+# Configuration files
+.prettierrc
+.prettierignore
+.gitattributes
+.gitignore
+
+# Documentation
+README.md
+wpsyde.json.example
+
+# Development files
+pnpm-lock.yaml
+health.json
+index.json
+public-key.pem
+_headers
+
+# Keep only the CLI script
+!scripts/wpsyde-cli.js
+
+# Remove any version.txt files
+version.txt 
