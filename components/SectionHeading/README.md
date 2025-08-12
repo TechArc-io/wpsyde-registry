@@ -5,8 +5,7 @@ Title + optional description block.
 ## Props
 
 | Name | Type | Default |
-|------|------|---------|
-
+| ---- | ---- | ------- |
 
 ## Usage
 

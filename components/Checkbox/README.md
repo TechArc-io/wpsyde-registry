@@ -4,14 +4,14 @@ Boolean input.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| name | string | "" |
-| checked | boolean | false |
-| value | string | "1" |
-| label | string | "" |
-| class | string | "" |
-| attrs | string | "[]" |
+| Name    | Type    | Default |
+| ------- | ------- | ------- |
+| name    | string  | ""      |
+| checked | boolean | false   |
+| value   | string  | "1"     |
+| label   | string  | ""      |
+| class   | string  | ""      |
+| attrs   | string  | "[]"    |
 
 ## Usage
 

@@ -1,0 +1,44 @@
+{
+  "name": "Toast",
+  "version": "1.0.0",
+  "description": "Toast component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Toast/component.php",
+      "dest": "template-parts/components/Toast/toast.php",
+      "integrity": "sha256-jboQVK92tY/StrkEzwoBZpSCod59+9eVf28JrfExCM8="
+    },
+    {
+      "path": "template-parts/components/Toast/styles.css",
+      "dest": "template-parts/components/Toast/Toast.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Toast/enhancer.js",
+      "dest": "template-parts/components/Toast/toast.js",
+      "integrity": "sha256-2bLJPWGHOXgsT7Zy6FxhlEHbfsa9uJ5AI2ZzyMn24tE="
+    },
+    {
+      "path": "template-parts/components/Toast/example.php",
+      "dest": "template-parts/components/Toast/example.php",
+      "integrity": "sha256-8v4bMchaGdoxq6vZMx9vk30kCNPzjaCVB5wBs764ap4="
+    },
+    {
+      "path": "template-parts/components/Toast/README.md",
+      "dest": "template-parts/components/Toast/README.md",
+      "integrity": "sha256-FK8GQikxjRcQlL6XLouvRlTbCv1Tb1CVU8MrdyY4QLI="
+    },
+    {
+      "path": "template-parts/components/Toast/manifest.json",
+      "dest": "template-parts/components/Toast/manifest.json",
+      "integrity": "sha256-c5fv/lU9JSk8M8XGTf/LH9Q0VdO5qmgtptGg9AD6Sqc="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.860Z",
+  "updatedAt": "2025-08-12T21:36:22.860Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-oq95KHsxUnEBIVKU7KAFbZbPsEHOP3HGi2IEvWvbcLQ="
+  }
+}

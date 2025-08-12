@@ -4,10 +4,10 @@ Page navigation controls.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| query | string | "null" |
-| class | string | "" |
+| Name  | Type   | Default |
+| ----- | ------ | ------- |
+| query | string | "null"  |
+| class | string | ""      |
 
 ## Usage
 

@@ -5,8 +5,7 @@ Text input field with focus ring.
 ## Props
 
 | Name | Type | Default |
-|------|------|---------|
-
+| ---- | ---- | ------- |
 
 ## Usage
 

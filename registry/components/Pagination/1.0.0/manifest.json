@@ -1,0 +1,44 @@
+{
+  "name": "Pagination",
+  "version": "1.0.0",
+  "description": "Pagination component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Pagination/component.php",
+      "dest": "template-parts/components/Pagination/pagination.php",
+      "integrity": "sha256-0p92hqdxAdadUX729P6da2czgnh6DM9sX6W5qbvJkg8="
+    },
+    {
+      "path": "template-parts/components/Pagination/styles.css",
+      "dest": "template-parts/components/Pagination/Pagination.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Pagination/enhancer.js",
+      "dest": "template-parts/components/Pagination/pagination.js",
+      "integrity": "sha256-6OKIfShjq7lUeVK3w+HtSpIrDlHgiNAKt4/EypsdXD8="
+    },
+    {
+      "path": "template-parts/components/Pagination/example.php",
+      "dest": "template-parts/components/Pagination/example.php",
+      "integrity": "sha256-vxrbZfFgfZ3SGwzkAB9XC9D/udD+jukf7TQcPSDe98w="
+    },
+    {
+      "path": "template-parts/components/Pagination/README.md",
+      "dest": "template-parts/components/Pagination/README.md",
+      "integrity": "sha256-sVpwrL3c3DWn1sEdXcHX1Q+yQYNxql9ragIxgPGDI1E="
+    },
+    {
+      "path": "template-parts/components/Pagination/manifest.json",
+      "dest": "template-parts/components/Pagination/manifest.json",
+      "integrity": "sha256-CrgThKApnjv7Z/8XDj2wLXt97G8Zlg4+ZMLWtDWYRoQ="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.814Z",
+  "updatedAt": "2025-08-12T21:36:22.815Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-Vv8S+fU+GgPY6pyfsf/r7KlKFfdGzFL/F/FKb9W2ZaI="
+  }
+}

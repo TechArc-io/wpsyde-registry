@@ -1,0 +1,44 @@
+{
+  "name": "Modal",
+  "version": "1.0.0",
+  "description": "Modal component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Modal/component.php",
+      "dest": "template-parts/components/Modal/modal.php",
+      "integrity": "sha256-N9MRBOBHWGL15NXOrxON2vggo+K4c/jBdj61KOkKO/k="
+    },
+    {
+      "path": "template-parts/components/Modal/styles.css",
+      "dest": "template-parts/components/Modal/Modal.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Modal/enhancer.js",
+      "dest": "template-parts/components/Modal/modal.js",
+      "integrity": "sha256-SLJTA2p3/Jjela+Fc7MOR/VJZ7l2NTOL2+YG4XJBRCU="
+    },
+    {
+      "path": "template-parts/components/Modal/example.php",
+      "dest": "template-parts/components/Modal/example.php",
+      "integrity": "sha256-So9oakKSJvoS8jJtFFyf4VgN1NoUKraY/9dq9O1NS3w="
+    },
+    {
+      "path": "template-parts/components/Modal/README.md",
+      "dest": "template-parts/components/Modal/README.md",
+      "integrity": "sha256-CYbJ5mnmCGyewb0sTocrxDWj9FsHJlgpZTodB1gmh/c="
+    },
+    {
+      "path": "template-parts/components/Modal/manifest.json",
+      "dest": "template-parts/components/Modal/manifest.json",
+      "integrity": "sha256-+GfMpy+6eEjR5qh54Z3mM8XwQdXukmj9PLkzj/fVtJ8="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.809Z",
+  "updatedAt": "2025-08-12T21:36:22.809Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-ZSK9aE8Nh1OuZ0KflP2M53j4ZLn+l1TNp8IRinJECAU="
+  }
+}

@@ -5,8 +5,7 @@ Surface container for grouping content.
 ## Props
 
 | Name | Type | Default |
-|------|------|---------|
-
+| ---- | ---- | ------- |
 
 ## Usage
 

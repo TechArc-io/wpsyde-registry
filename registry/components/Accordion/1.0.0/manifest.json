@@ -1,0 +1,44 @@
+{
+  "name": "Accordion",
+  "version": "1.0.0",
+  "description": "Accordion component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Accordion/component.php",
+      "dest": "template-parts/components/Accordion/accordion.php",
+      "integrity": "sha256-9M2t3Y8zEXuP9ORbubnsjZbvV0h5peLsX/pa4b4UqZo="
+    },
+    {
+      "path": "template-parts/components/Accordion/styles.css",
+      "dest": "template-parts/components/Accordion/Accordion.css",
+      "integrity": "sha256-aRpxoSVB+RPu9Tk7xfInvGvuFHj4ilETBbQy7bgQcwk="
+    },
+    {
+      "path": "template-parts/components/Accordion/enhancer.js",
+      "dest": "template-parts/components/Accordion/accordion.js",
+      "integrity": "sha256-XYWBK732Hd6DoeGpgvelXzI8TVVK+EZ1ITvT5SHZUk4="
+    },
+    {
+      "path": "template-parts/components/Accordion/example.php",
+      "dest": "template-parts/components/Accordion/example.php",
+      "integrity": "sha256-mrqfwcAmQ3pzYfBKkRKFryb8TDihlu+HOdnPmpKswaM="
+    },
+    {
+      "path": "template-parts/components/Accordion/README.md",
+      "dest": "template-parts/components/Accordion/README.md",
+      "integrity": "sha256-K4a+EujZ0KsX7r3oG63gR9CZNaphwGuU44gzmMTJfyQ="
+    },
+    {
+      "path": "template-parts/components/Accordion/manifest.json",
+      "dest": "template-parts/components/Accordion/manifest.json",
+      "integrity": "sha256-yOM6YbH0R8AjvaHQW/1addjA2rjQ4z3WGh+ggQIwsFw="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.761Z",
+  "updatedAt": "2025-08-12T21:36:22.762Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-kzmFNYp3u5taHva8ofBm4H4UiEZCUfWyOuVMNvb7w2E="
+  }
+}

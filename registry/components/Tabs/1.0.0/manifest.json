@@ -1,0 +1,44 @@
+{
+  "name": "Tabs",
+  "version": "1.0.0",
+  "description": "Tabs component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Tabs/component.php",
+      "dest": "template-parts/components/Tabs/tabs.php",
+      "integrity": "sha256-PQ9FqHkPF0+Kn1Vv8uSGMnyR3+7/JoUv1en2eCDjBE4="
+    },
+    {
+      "path": "template-parts/components/Tabs/styles.css",
+      "dest": "template-parts/components/Tabs/Tabs.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Tabs/enhancer.js",
+      "dest": "template-parts/components/Tabs/tabs.js",
+      "integrity": "sha256-HExVWjoFJa/scjgFPpEdw9xEBKDac1jnN+lTv95v76U="
+    },
+    {
+      "path": "template-parts/components/Tabs/example.php",
+      "dest": "template-parts/components/Tabs/example.php",
+      "integrity": "sha256-jf7epQz/7TE1HFxwROVrTOhnPkta4TlRCQg08YF5P84="
+    },
+    {
+      "path": "template-parts/components/Tabs/README.md",
+      "dest": "template-parts/components/Tabs/README.md",
+      "integrity": "sha256-QxwqUijVz2rAAyVxRZqKVS/DSsjvtHUCK0sXOeRlg8U="
+    },
+    {
+      "path": "template-parts/components/Tabs/manifest.json",
+      "dest": "template-parts/components/Tabs/manifest.json",
+      "integrity": "sha256-9GUpsQMR7sQ0UCF9VbJ+D47xQEW0n3hcIu6/oKDbxqM="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.849Z",
+  "updatedAt": "2025-08-12T21:36:22.849Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-Diu3ZqWf7kWx0m73GuCnURmbGnQQXGN5ObjifacQFgQ="
+  }
+}

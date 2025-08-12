@@ -4,13 +4,13 @@ Dialog overlay.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| open | boolean | false |
-| title | string | "" |
-| content | string | "" |
-| class | string | "" |
-| id | string | "null" |
+| Name    | Type    | Default |
+| ------- | ------- | ------- |
+| open    | boolean | false   |
+| title   | string  | ""      |
+| content | string  | ""      |
+| class   | string  | ""      |
+| id      | string  | "null"  |
 
 ## Usage
 

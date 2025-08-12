@@ -4,14 +4,14 @@ Multiline input.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| name | string | "" |
-| placeholder | string | "" |
-| value | string | "" |
-| rows | string | "4" |
-| class | string | "" |
-| attrs | string | "[]" |
+| Name        | Type   | Default |
+| ----------- | ------ | ------- |
+| name        | string | ""      |
+| placeholder | string | ""      |
+| value       | string | ""      |
+| rows        | string | "4"     |
+| class       | string | ""      |
+| attrs       | string | "[]"    |
 
 ## Usage
 

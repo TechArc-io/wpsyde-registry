@@ -1,0 +1,44 @@
+{
+  "name": "SectionHeading",
+  "version": "1.0.0",
+  "description": "SectionHeading component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/SectionHeading/component.php",
+      "dest": "template-parts/components/SectionHeading/sectionheading.php",
+      "integrity": "sha256-i5qENtWfYp/k+8Nk9Qac6e8FSo5QTCC6QSFxSYPmRjc="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/styles.css",
+      "dest": "template-parts/components/SectionHeading/SectionHeading.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/enhancer.js",
+      "dest": "template-parts/components/SectionHeading/sectionheading.js",
+      "integrity": "sha256-6acj2yc6uqx1+mgBhzolq+3YiSenUc4tJQ+/tnvAcdU="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/example.php",
+      "dest": "template-parts/components/SectionHeading/example.php",
+      "integrity": "sha256-yuwW8Nq1r8ijqLevngVe9y/0cm1mJzYgM6Tvcz6diCU="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/README.md",
+      "dest": "template-parts/components/SectionHeading/README.md",
+      "integrity": "sha256-Kr0p94Hx2UZW/bHPemDCvjgQ58iLrIwRTdajqJgmlKA="
+    },
+    {
+      "path": "template-parts/components/SectionHeading/manifest.json",
+      "dest": "template-parts/components/SectionHeading/manifest.json",
+      "integrity": "sha256-e9OlxmC9/11Fga9FvRiTlFdZpFm5KT83tgWs8kKyEuY="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.819Z",
+  "updatedAt": "2025-08-12T21:36:22.819Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-4DnJ8UwoHLD1ZM9gmofLeYdkmhKgiOwjYP2nd34/E8g="
+  }
+}

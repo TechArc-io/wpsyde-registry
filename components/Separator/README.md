@@ -4,9 +4,9 @@ Horizontal rule/divider.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| class | string | "" |
+| Name  | Type   | Default |
+| ----- | ------ | ------- |
+| class | string | ""      |
 
 ## Usage
 

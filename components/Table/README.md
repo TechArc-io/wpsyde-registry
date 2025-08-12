@@ -4,11 +4,11 @@ Data table primitives.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| headers | string | "[]" |
-| rows | string | "[]" |
-| class | string | "" |
+| Name    | Type   | Default |
+| ------- | ------ | ------- |
+| headers | string | "[]"    |
+| rows    | string | "[]"    |
+| class   | string | ""      |
 
 ## Usage
 

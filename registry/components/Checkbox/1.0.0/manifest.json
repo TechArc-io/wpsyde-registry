@@ -1,0 +1,44 @@
+{
+  "name": "Checkbox",
+  "version": "1.0.0",
+  "description": "Checkbox component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Checkbox/component.php",
+      "dest": "template-parts/components/Checkbox/checkbox.php",
+      "integrity": "sha256-lX24vVhe++ol3HvQEcm1LyFKpY+Nj66Q0u5fMqvUa/k="
+    },
+    {
+      "path": "template-parts/components/Checkbox/styles.css",
+      "dest": "template-parts/components/Checkbox/Checkbox.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Checkbox/enhancer.js",
+      "dest": "template-parts/components/Checkbox/checkbox.js",
+      "integrity": "sha256-vZDPfcFqBVpuqmdZ+VLPoaJtSFdPbfPr4M9gRUvRVJQ="
+    },
+    {
+      "path": "template-parts/components/Checkbox/example.php",
+      "dest": "template-parts/components/Checkbox/example.php",
+      "integrity": "sha256-Nwg4i0DaD+hXmeKfIRkrV4UJgqLVOZf44YyDCF7U0C8="
+    },
+    {
+      "path": "template-parts/components/Checkbox/README.md",
+      "dest": "template-parts/components/Checkbox/README.md",
+      "integrity": "sha256-zMMTF1LcaAVYo6Q0IKZrQIjmXUQTlX/O+9FBJWJCvt4="
+    },
+    {
+      "path": "template-parts/components/Checkbox/manifest.json",
+      "dest": "template-parts/components/Checkbox/manifest.json",
+      "integrity": "sha256-EdmVsMBsyW1oLHwOCOtKQIkUV6uH/MityivebcD74nw="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.799Z",
+  "updatedAt": "2025-08-12T21:36:22.799Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-x2Zi+8eeYmi4zB52eQK4AOD7LoAnTao+m4LpelnHA3g="
+  }
+}

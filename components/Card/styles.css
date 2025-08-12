@@ -1,1 +1,63 @@
-/* Optional component-specific styles (prefer tokens/utilities) */
+/* Card Component Styles */
+/* These styles work with the theme system and can be customized */
+
+/* Base card styles */
+[data-wpsyde-card] {
+  /* Smooth transitions for theme changes */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Card variants */
+[data-wpsyde-card][data-variant='default'] {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+}
+
+[data-wpsyde-card][data-variant='outline'] {
+  background-color: transparent;
+  border: 2px solid var(--border);
+}
+
+[data-wpsyde-card][data-variant='ghost'] {
+  background-color: transparent;
+  border: none;
+}
+
+/* Card header */
+[data-wpsyde-card-header] {
+  padding: 1.5rem 1.5rem 0;
+}
+
+[data-wpsyde-card-title] {
+  color: var(--card-foreground);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+[data-wpsyde-card-description] {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+/* Card content */
+[data-wpsyde-card-content] {
+  padding: 1.5rem;
+  color: var(--card-foreground);
+}
+
+/* Card footer */
+[data-wpsyde-card-footer] {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Card hover effects */
+[data-wpsyde-card]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}

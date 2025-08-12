@@ -5,8 +5,7 @@ Small status pill for labeling.
 ## Props
 
 | Name | Type | Default |
-|------|------|---------|
-
+| ---- | ---- | ------- |
 
 ## Usage
 

@@ -4,10 +4,10 @@ Header navigation bar.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
+| Name           | Type   | Default  |
+| -------------- | ------ | -------- |
 | theme_location | string | "menu-1" |
-| class | string | "" |
+| class          | string | ""       |
 
 ## Usage
 

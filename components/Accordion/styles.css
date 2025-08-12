@@ -1,1 +1,51 @@
-/* Optional component-specific styles (prefer tokens/utilities) */
+/* Accordion Component Styles */
+/* These styles work with the theme system and can be customized */
+
+/* Base accordion container */
+[data-wpsyde-accordion] {
+  /* Uses theme variables for consistent theming */
+}
+
+/* Individual accordion items */
+[data-wpsyde-accordion-item] {
+  /* Smooth transitions for theme changes */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Accordion summary (clickable header) */
+[data-wpsyde-accordion-item] summary {
+  /* Hover effects */
+  transition: background-color 0.2s ease;
+}
+
+[data-wpsyde-accordion-item] summary:hover {
+  background-color: var(--accent);
+}
+
+/* Focus states for accessibility */
+[data-wpsyde-accordion-item] summary:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Content area */
+[data-wpsyde-accordion-item] > div {
+  /* Smooth content transitions */
+  transition: all 0.3s ease;
+}
+
+/* Optional: Custom animations */
+[data-wpsyde-accordion-item][open] > div {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

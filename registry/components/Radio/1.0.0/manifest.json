@@ -1,0 +1,44 @@
+{
+  "name": "Radio",
+  "version": "1.0.0",
+  "description": "Radio component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Radio/component.php",
+      "dest": "template-parts/components/Radio/radio.php",
+      "integrity": "sha256-1KHnBpkwnRBjxe6kImY95GfWoWOT9NAI+C4HKGAlriU="
+    },
+    {
+      "path": "template-parts/components/Radio/styles.css",
+      "dest": "template-parts/components/Radio/Radio.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Radio/enhancer.js",
+      "dest": "template-parts/components/Radio/radio.js",
+      "integrity": "sha256-vZA5v7tOGMXiZOJH6viA1xL15NcF/zjb8XgdxXvGoxI="
+    },
+    {
+      "path": "template-parts/components/Radio/example.php",
+      "dest": "template-parts/components/Radio/example.php",
+      "integrity": "sha256-2dAhMXmqKHSbYzkDmidWttYI9FLWSXwSPqlvNw4GkNo="
+    },
+    {
+      "path": "template-parts/components/Radio/README.md",
+      "dest": "template-parts/components/Radio/README.md",
+      "integrity": "sha256-uZwX/Kf08Jd9QlSYVsi6wmDk8CLIymfiHtE+FVIaWBg="
+    },
+    {
+      "path": "template-parts/components/Radio/manifest.json",
+      "dest": "template-parts/components/Radio/manifest.json",
+      "integrity": "sha256-VGyjdDNVTHEZZYWagZZzj0lglgPBEhfSdm3p3hzyZw0="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.818Z",
+  "updatedAt": "2025-08-12T21:36:22.818Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-qsk57Gawd7IDEJVf9PA+UrRtR2fvrgJMG15ymC7fatY="
+  }
+}

@@ -4,10 +4,10 @@ Hierarchy navigation.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| items | string | "[]" |
-| class | string | "" |
+| Name  | Type   | Default |
+| ----- | ------ | ------- |
+| items | string | "[]"    |
+| class | string | ""      |
 
 ## Usage
 

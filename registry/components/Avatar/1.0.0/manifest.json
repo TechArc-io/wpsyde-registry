@@ -1,0 +1,44 @@
+{
+  "name": "Avatar",
+  "version": "1.0.0",
+  "description": "Avatar component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Avatar/component.php",
+      "dest": "template-parts/components/Avatar/avatar.php",
+      "integrity": "sha256-T6RTfcimeWFlRtzQ8GsFJfDyOU2XwjyXGI758hfxYCs="
+    },
+    {
+      "path": "template-parts/components/Avatar/styles.css",
+      "dest": "template-parts/components/Avatar/Avatar.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Avatar/enhancer.js",
+      "dest": "template-parts/components/Avatar/avatar.js",
+      "integrity": "sha256-4KlUfsEjmxiV0kYopmukZab2mKpoIr0kokNxoiWJFTY="
+    },
+    {
+      "path": "template-parts/components/Avatar/example.php",
+      "dest": "template-parts/components/Avatar/example.php",
+      "integrity": "sha256-vE3fh9bS0rGtIY7pu2Njy6muZtphFon34BzAfyVxcaE="
+    },
+    {
+      "path": "template-parts/components/Avatar/README.md",
+      "dest": "template-parts/components/Avatar/README.md",
+      "integrity": "sha256-TigvRYOqJidT+eG1B3WdpraCVI7fpypBcTI1E2q8bYU="
+    },
+    {
+      "path": "template-parts/components/Avatar/manifest.json",
+      "dest": "template-parts/components/Avatar/manifest.json",
+      "integrity": "sha256-3qvpT64juuvqS4928+JQdBklPW915PEDFXuNDUg8Hos="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.782Z",
+  "updatedAt": "2025-08-12T21:36:22.782Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-2PojAAkkYZ8yXKiNqU83ozLxauGf3N96VhpoI4jFdTE="
+  }
+}

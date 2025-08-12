@@ -4,11 +4,11 @@ Tabbed content navigation.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| tabs | string | "[]" |
-| active | string | "0" |
-| class | string | "" |
+| Name   | Type   | Default |
+| ------ | ------ | ------- |
+| tabs   | string | "[]"    |
+| active | string | "0"     |
+| class  | string | ""      |
 
 ## Usage
 

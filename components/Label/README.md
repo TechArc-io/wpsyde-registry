@@ -4,11 +4,11 @@ Form label helper.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| for | string | "" |
-| text | string | "" |
-| class | string | "" |
+| Name  | Type   | Default |
+| ----- | ------ | ------- |
+| for   | string | ""      |
+| text  | string | ""      |
+| class | string | ""      |
 
 ## Usage
 

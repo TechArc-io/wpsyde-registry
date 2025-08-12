@@ -2,22 +2,21 @@
 
 /**
  * Build WPSyde Registry
- * 
+ *
  * This script builds the complete registry by:
  * 1. Packaging all components in WordPress-style structure
  * 2. Updating index.json with component information
  * 3. Preparing for deployment to Cloudflare Pages
- * 
+ *
  * Usage: node scripts/build-registry.js [--version=1.0.0] [--only=Button,Card]
  */
 
 const fs = require('fs');
 const path = require('path');
-const { packageComponent, listComponents } = require('./generate-component-packaging.js');
+const { packageComponent } = require('./package-components.js');
 
 const ROOT = process.cwd();
 const COMPONENTS_DIR = path.join(ROOT, 'components');
-const PACKAGES_DIR = path.join(ROOT, 'packages');
 const REGISTRY_DIR = path.join(ROOT, 'registry');
 
 // Colors for output
@@ -59,7 +58,7 @@ function parseArgs() {
   const options = {
     version: '1.0.0',
     only: null,
-    help: false
+    help: false,
   };
 
   args.forEach(arg => {
@@ -82,7 +81,10 @@ function showHelp() {
   log('\nUsage:', 'cyan');
   log('  node scripts/build-registry.js [options]', 'white');
   log('\nOptions:', 'cyan');
-  log('  --version=1.0.0        Set version for all components (default: 1.0.0)', 'white');
+  log(
+    '  --version=1.0.0        Set version for all components (default: 1.0.0)',
+    'white'
+  );
   log('  --only=Button,Card     Build only specific components', 'white');
   log('  --help                 Show this help message', 'white');
   log('\nExamples:', 'cyan');
@@ -97,11 +99,9 @@ function showHelp() {
 
 // Ensure directories exist
 function ensureDirectories() {
-  [PACKAGES_DIR, REGISTRY_DIR].forEach(dir => {
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-  });
+  if (!fs.existsSync(REGISTRY_DIR)) {
+    fs.mkdirSync(REGISTRY_DIR, { recursive: true });
+  }
 }
 
 // Get components to build
@@ -110,7 +110,8 @@ function getComponentsToBuild(options) {
     error(`Components directory not found: ${COMPONENTS_DIR}`);
   }
 
-  let components = fs.readdirSync(COMPONENTS_DIR, { withFileTypes: true })
+  let components = fs
+    .readdirSync(COMPONENTS_DIR, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
 
@@ -128,7 +129,7 @@ function getComponentsToBuild(options) {
 async function buildComponent(componentName, version) {
   try {
     log(`\n📦 Building ${componentName}@${version}...`, 'cyan');
-    
+
     const result = await packageComponent(componentName, version);
     if (result) {
       success(`Built ${componentName}@${version}`);
@@ -140,32 +141,31 @@ async function buildComponent(componentName, version) {
   }
 }
 
-// Copy packages to registry
+// Components are already in registry from package-components.js
 function copyToRegistry(componentName, version) {
-  const sourceDir = path.join(PACKAGES_DIR, componentName, version);
-  const targetDir = path.join(REGISTRY_DIR, 'components', componentName, version);
-  
-  if (!fs.existsSync(sourceDir)) {
-    warn(`Package directory not found: ${sourceDir}`);
+  const targetDir = path.join(
+    REGISTRY_DIR,
+    'components',
+    componentName,
+    version
+  );
+
+  if (!fs.existsSync(targetDir)) {
+    warn(`Registry directory not found: ${targetDir}`);
     return false;
   }
 
-  // Ensure target directory exists
-  fs.mkdirSync(targetDir, { recursive: true });
+  // Check if component files exist
+  const manifestPath = path.join(targetDir, 'manifest.json');
+  const zipPath = path.join(targetDir, 'component.zip');
 
-  // Copy all files
-  const files = fs.readdirSync(sourceDir);
-  files.forEach(file => {
-    const sourcePath = path.join(sourceDir, file);
-    const targetPath = path.join(targetDir, file);
-    
-    if (fs.statSync(sourcePath).isFile()) {
-      fs.copyFileSync(sourcePath, targetPath);
-      info(`  Copied: ${file}`);
-    }
-  });
-
-  return true;
+  if (fs.existsSync(manifestPath) && fs.existsSync(zipPath)) {
+    info(`  Component ${componentName} already in registry`);
+    return true;
+  } else {
+    warn(`  Component ${componentName} missing required files`);
+    return false;
+  }
 }
 
 // Update index.json
@@ -184,17 +184,23 @@ function updateIndex(components, version) {
 
   // Update component information
   components.forEach(componentName => {
-    const manifestPath = path.join(REGISTRY_DIR, 'components', componentName, version, 'manifest.json');
-    
+    const manifestPath = path.join(
+      REGISTRY_DIR,
+      'components',
+      componentName,
+      version,
+      'manifest.json'
+    );
+
     if (fs.existsSync(manifestPath)) {
       try {
         const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-        
+
         index.components[componentName] = {
           latest: version,
           versions: [version],
           description: manifest.description || '',
-          updatedAt: new Date().toISOString()
+          updatedAt: new Date().toISOString(),
         };
       } catch (err) {
         warn(`Failed to read manifest for ${componentName}: ${err.message}`);
@@ -204,14 +210,16 @@ function updateIndex(components, version) {
 
   // Write updated index
   fs.writeFileSync(indexPath, JSON.stringify(index, null, 2));
-  success(`Updated index.json with ${Object.keys(index.components).length} components`);
+  success(
+    `Updated index.json with ${Object.keys(index.components).length} components`
+  );
 }
 
 // Build registry
 async function buildRegistry(options) {
   log('\n🚀 Building WPSyde Registry...', 'bright');
   log(`Version: ${options.version}`, 'cyan');
-  
+
   if (options.only) {
     log(`Components: ${options.only.join(', ')}`, 'cyan');
   }
@@ -254,10 +262,16 @@ async function buildRegistry(options) {
   // Summary
   log('\n🎉 Registry Build Complete!', 'bright');
   log('============================', 'bright');
-  log(`Built: ${builtComponents.length}/${components.length} components`, 'green');
-  log(`Copied: ${copiedComponents.length}/${builtComponents.length} to registry`, 'green');
+  log(
+    `Built: ${builtComponents.length}/${components.length} components`,
+    'green'
+  );
+  log(
+    `Copied: ${copiedComponents.length}/${builtComponents.length} to registry`,
+    'green'
+  );
   log(`Registry location: ${REGISTRY_DIR}`, 'cyan');
-  
+
   if (copiedComponents.length > 0) {
     log('\nNext steps:', 'bright');
     log('1. Review the registry in the registry/ directory', 'white');
@@ -287,4 +301,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { buildRegistry, parseArgs }; 
+module.exports = { buildRegistry, parseArgs };

@@ -4,12 +4,12 @@ User/image avatar.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| src | string | "" |
-| alt | string | "" |
-| size | string | "md" |
-| class | string | "" |
+| Name  | Type   | Default |
+| ----- | ------ | ------- |
+| src   | string | ""      |
+| alt   | string | ""      |
+| size  | string | "md"    |
+| class | string | ""      |
 
 ## Usage
 

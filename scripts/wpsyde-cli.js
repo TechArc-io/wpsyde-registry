@@ -70,7 +70,10 @@ function warn(message) {
 // HTTP helper with progress
 function fetch(url, showProgress = false, binary = false) {
   return new Promise((resolve, reject) => {
-    const request = https.get(url, res => {
+    const isHttps = url.startsWith('https://');
+    const httpModule = isHttps ? require('https') : require('http');
+
+    const request = httpModule.get(url, res => {
       if (res.statusCode !== 200) {
         reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
         return;
@@ -206,7 +209,10 @@ async function add(componentName, version = 'latest') {
     log(`📦 Installing ${sanitizedComponentName}@${targetVersion}`, 'cyan');
 
     // Create WordPress-style component directory
-    const componentDir = path.join(config.componentsDir, sanitizedComponentName);
+    const componentDir = path.join(
+      config.componentsDir,
+      sanitizedComponentName
+    );
     fs.mkdirSync(componentDir, { recursive: true });
 
     // Download manifest
@@ -242,10 +248,10 @@ async function add(componentName, version = 'latest') {
         if (entryPath.startsWith(componentPath)) {
           // Extract to WordPress-style paths (flat structure)
           const relativePath = entryPath.substring(componentPath.length);
-          
+
           // Convert to WordPress naming convention
           let fileName = relativePath;
-          
+
           // Handle main component file
           if (fileName === 'component.php') {
             fileName = `${sanitizedComponentName.toLowerCase()}.php`;
@@ -256,7 +262,7 @@ async function add(componentName, version = 'latest') {
           } else if (fileName === 'README.md') {
             fileName = 'readme.md';
           }
-          
+
           const targetPath = path.join(componentDir, fileName);
 
           // Ensure target directory exists
@@ -326,7 +332,10 @@ function remove(componentName) {
     log(`\n🗑️  Removing ${sanitizedComponentName}...`, 'bright');
 
     // Remove component directory
-    const componentDir = path.join(config.componentsDir, sanitizedComponentName);
+    const componentDir = path.join(
+      config.componentsDir,
+      sanitizedComponentName
+    );
     if (fs.existsSync(componentDir)) {
       fs.rmSync(componentDir, { recursive: true, force: true });
       success(`Removed component directory: ${componentDir}`);
@@ -344,8 +353,14 @@ function remove(componentName) {
 
 // Show help
 function help() {
-  log('\n🚀 WPSyde UI - Professional Component Manager (WordPress-native)', 'bright');
-  log('================================================================', 'bright');
+  log(
+    '\n🚀 WPSyde UI - Professional Component Manager (WordPress-native)',
+    'bright'
+  );
+  log(
+    '================================================================',
+    'bright'
+  );
   log('\nUsage:', 'cyan');
   log('  npx wpsyde-ui <command> [options]', 'white');
   log('\nCommands:', 'cyan');
@@ -358,10 +373,7 @@ function help() {
     '  add <name> [version]    Install a component (default: latest)',
     'white'
   );
-  log(
-    '  remove <name>           Remove an installed component',
-    'white'
-  );
+  log('  remove <name>           Remove an installed component', 'white');
   log('  help                    Show this help message', 'white');
   log('\nExamples:', 'cyan');
   log('  npx wpsyde-ui init', 'white');

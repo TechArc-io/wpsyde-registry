@@ -4,11 +4,11 @@ Hover/focus information.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| text | string | "" |
-| content | string | "" |
-| class | string | "" |
+| Name    | Type   | Default |
+| ------- | ------ | ------- |
+| text    | string | ""      |
+| content | string | ""      |
+| class   | string | ""      |
 
 ## Usage
 

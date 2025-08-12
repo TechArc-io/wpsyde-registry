@@ -5,8 +5,7 @@ Inline feedback messages.
 ## Props
 
 | Name | Type | Default |
-|------|------|---------|
-
+| ---- | ---- | ------- |
 
 ## Usage
 

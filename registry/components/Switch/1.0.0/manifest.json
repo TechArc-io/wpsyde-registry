@@ -1,0 +1,24 @@
+{
+  "name": "Switch",
+  "version": "1.0.0",
+  "description": "Switch component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Switch/component.php",
+      "dest": "template-parts/components/Switch/switch.php",
+      "integrity": "sha256-kL/I/IM9C8Q5gCReRXenuPLeSVctThL25BcPAVlj+64="
+    },
+    {
+      "path": "template-parts/components/Switch/manifest.json",
+      "dest": "template-parts/components/Switch/manifest.json",
+      "integrity": "sha256-MbWtw54gGSawGc69rK/aWkibj+WB3Sci9kYk1Yz/jEo="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.828Z",
+  "updatedAt": "2025-08-12T21:36:22.828Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-EJXFFV7uRbkLBi4QXIQ5X+sd5GD2nyx7JnoOSxc+rDY="
+  }
+}

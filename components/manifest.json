@@ -1,25 +1,190 @@
-[
-  {"name":"Button","version":"1.0.0","description":"Actions with variants and sizes.","files":[{"src":"template-parts/components/Button/component.php","dest":"template-parts/components/Button/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Card","version":"1.0.0","description":"Surface container for grouping content.","files":[{"src":"template-parts/components/Card/component.php","dest":"template-parts/components/Card/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Badge","version":"1.0.0","description":"Small status pill for labeling.","files":[{"src":"template-parts/components/Badge/component.php","dest":"template-parts/components/Badge/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Input","version":"1.0.0","description":"Text input field with focus ring.","files":[{"src":"template-parts/components/Input/component.php","dest":"template-parts/components/Input/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"SectionHeading","version":"1.0.0","description":"Title + optional description block.","files":[{"src":"template-parts/components/SectionHeading/component.php","dest":"template-parts/components/SectionHeading/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Accordion","version":"1.0.0","description":"Collapsible sections.","files":[{"src":"template-parts/components/Accordion/component.php","dest":"template-parts/components/Accordion/component.php"}],"dependencies":["Separator"],"pro":false,"checksum":""},
-  {"name":"Alert","version":"1.0.0","description":"Inline feedback messages.","files":[{"src":"template-parts/components/Alert/component.php","dest":"template-parts/components/Alert/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Avatar","version":"1.0.0","description":"User/image avatar.","files":[{"src":"template-parts/components/Avatar/component.php","dest":"template-parts/components/Avatar/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Breadcrumbs","version":"1.0.0","description":"Hierarchy navigation.","files":[{"src":"template-parts/components/Breadcrumbs/component.php","dest":"template-parts/components/Breadcrumbs/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Checkbox","version":"1.0.0","description":"Boolean input.","files":[{"src":"template-parts/components/Checkbox/component.php","dest":"template-parts/components/Checkbox/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Label","version":"1.0.0","description":"Form label helper.","files":[{"src":"template-parts/components/Label/component.php","dest":"template-parts/components/Label/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Modal","version":"1.0.0","description":"Dialog overlay.","files":[{"src":"template-parts/components/Modal/component.php","dest":"template-parts/components/Modal/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Navbar","version":"1.0.0","description":"Header navigation bar.","files":[{"src":"template-parts/components/Navbar/component.php","dest":"template-parts/components/Navbar/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Pagination","version":"1.0.0","description":"Page navigation controls.","files":[{"src":"template-parts/components/Pagination/component.php","dest":"template-parts/components/Pagination/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Radio","version":"1.0.0","description":"Radio group input.","files":[{"src":"template-parts/components/Radio/component.php","dest":"template-parts/components/Radio/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Select","version":"1.0.0","description":"Dropdown select.","files":[{"src":"template-parts/components/Select/component.php","dest":"template-parts/components/Select/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Separator","version":"1.0.0","description":"Horizontal rule/divider.","files":[{"src":"template-parts/components/Separator/component.php","dest":"template-parts/components/Separator/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"SwitchC","version":"1.0.0","description":"Toggle switch input.","files":[{"src":"template-parts/components/Switch/component.php","dest":"template-parts/components/Switch/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Table","version":"1.0.0","description":"Data table primitives.","files":[{"src":"template-parts/components/Table/component.php","dest":"template-parts/components/Table/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Tabs","version":"1.0.0","description":"Tabbed content navigation.","files":[{"src":"template-parts/components/Tabs/component.php","dest":"template-parts/components/Tabs/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Textarea","version":"1.0.0","description":"Multiline input.","files":[{"src":"template-parts/components/Textarea/component.php","dest":"template-parts/components/Textarea/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Toast","version":"1.0.0","description":"Transient notifications.","files":[{"src":"template-parts/components/Toast/component.php","dest":"template-parts/components/Toast/component.php"}],"dependencies":[],"pro":false,"checksum":""},
-  {"name":"Tooltip","version":"1.0.0","description":"Hover/focus information.","files":[{"src":"template-parts/components/Tooltip/component.php","dest":"template-parts/components/Tooltip/component.php"}],"dependencies":[],"pro":false,"checksum":""}
-]
+{
+  "registryVersion": 1,
+  "updatedAt": "2025-01-27T00:00:00.000Z",
+  "components": {
+    "Button": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Actions with variants and sizes.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Card": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Surface container for grouping content.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Badge": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Small status pill for labeling.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Input": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Text input field with focus ring.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "SectionHeading": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Title + optional description block.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Accordion": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Collapsible sections.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Alert": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Inline feedback messages.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Avatar": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "User/image avatar.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Breadcrumbs": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Hierarchy navigation.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Checkbox": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Boolean input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Label": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Form label helper.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Modal": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Dialog overlay.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Navbar": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Header navigation bar.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Pagination": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Page navigation controls.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Radio": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Radio group input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Select": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Dropdown select.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Separator": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Horizontal rule/divider.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Switch": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Toggle switch input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Table": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Data table primitives.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Tabs": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Tabbed content navigation.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Textarea": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Multiline input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Toast": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Transient notifications.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Tooltip": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Hover/focus information.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    }
+  }
+}

@@ -4,11 +4,11 @@ Transient notifications.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| variant | string | "info" |
-| content | string | "" |
-| class | string | "" |
+| Name    | Type   | Default |
+| ------- | ------ | ------- |
+| variant | string | "info"  |
+| content | string | ""      |
+| class   | string | ""      |
 
 ## Usage
 

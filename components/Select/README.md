@@ -4,14 +4,14 @@ Dropdown select.
 
 ## Props
 
-| Name | Type | Default |
-|------|------|---------|
-| name | string | "" |
-| options | string | "[]" |
-| value | string | "" |
-| placeholder | string | "" |
-| class | string | "" |
-| attrs | string | "[]" |
+| Name        | Type   | Default |
+| ----------- | ------ | ------- |
+| name        | string | ""      |
+| options     | string | "[]"    |
+| value       | string | ""      |
+| placeholder | string | ""      |
+| class       | string | ""      |
+| attrs       | string | "[]"    |
 
 ## Usage
 

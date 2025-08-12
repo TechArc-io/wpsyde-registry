@@ -1,0 +1,44 @@
+{
+  "name": "Tooltip",
+  "version": "1.0.0",
+  "description": "Tooltip component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Tooltip/component.php",
+      "dest": "template-parts/components/Tooltip/tooltip.php",
+      "integrity": "sha256-tQnYCXNqsUwmxg2Qgfje+QvThQD53JzdazxLLRM8drg="
+    },
+    {
+      "path": "template-parts/components/Tooltip/styles.css",
+      "dest": "template-parts/components/Tooltip/Tooltip.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Tooltip/enhancer.js",
+      "dest": "template-parts/components/Tooltip/tooltip.js",
+      "integrity": "sha256-ZYvj11SDybwzrciZ0R+mAPj/t+ZVOmISAAwCptCnd/g="
+    },
+    {
+      "path": "template-parts/components/Tooltip/example.php",
+      "dest": "template-parts/components/Tooltip/example.php",
+      "integrity": "sha256-JrvMh68R3lOxH4vq4qhSk2afJv13DbVKXD9Lgbas8ZY="
+    },
+    {
+      "path": "template-parts/components/Tooltip/README.md",
+      "dest": "template-parts/components/Tooltip/README.md",
+      "integrity": "sha256-CED7lYaFm3yI8wQ2gbT8Tws9AwGximp5iq9FSIh63iw="
+    },
+    {
+      "path": "template-parts/components/Tooltip/manifest.json",
+      "dest": "template-parts/components/Tooltip/manifest.json",
+      "integrity": "sha256-D7C9jB7myfvPS/tCVnJhqmOvGwD5m6iknROR1oQOfVs="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T21:36:22.863Z",
+  "updatedAt": "2025-08-12T21:36:22.863Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-tMWou8wBBHdCI1savVMvvq0whBWfg8Kf9nhr/J/kzvQ="
+  }
+}
