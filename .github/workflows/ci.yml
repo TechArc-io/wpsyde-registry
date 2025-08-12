@@ -89,8 +89,8 @@ jobs:
       - name: Install verifier deps
         run: npm i tweetnacl tweetnacl-util
       - name: Verify signatures
-        shell: node
         run: |
+          node -e "
           const fs = require('fs');
           const nacl = require('tweetnacl');
           const util = require('tweetnacl-util');
@@ -103,22 +103,23 @@ jobs:
 
           function verifyManifest(path) {
             const m = JSON.parse(fs.readFileSync(path,'utf8'));
-            if (!m.signature) { throw new Error(`Missing signature in ${path}`); }
+            if (!m.signature) { throw new Error(\`Missing signature in \${path}\`); }
             const msg = util.decodeUTF8(canon(m));
             const sig = Buffer.from(m.signature, 'base64');
             if (!nacl.sign.detached.verify(msg, sig, pubKey)) {
-              throw new Error(`Bad signature: ${path}`);
+              throw new Error(\`Bad signature: \${path}\`);
             }
           }
 
           function walk(dir){
             for (const f of fs.readdirSync(dir)) {
-              const p = `${dir}/${f}`;
+              const p = \`\${dir}/\${f}\`;
               const st = fs.statSync(p);
               if (st.isDirectory()) walk(p);
               else if (f === 'manifest.json') verifyManifest(p);
-              }
             }
+          }
           walk('components');
           console.log('All manifest signatures OK');
+          "
 
