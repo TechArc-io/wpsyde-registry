@@ -4,145 +4,145 @@
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Accordion component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Alert": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Alert component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Avatar": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Avatar component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Badge": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Badge component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Breadcrumbs": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Breadcrumbs component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Button": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Button component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Card": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Card component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Checkbox": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Checkbox component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Input": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Input component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.327Z"
     },
     "Label": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Label component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Layout": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Layout component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Modal": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Modal component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Navbar": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Navbar component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Pagination": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Pagination component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Radio": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Radio component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "SectionHeading": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "SectionHeading component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Select": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Select component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Separator": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Separator component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Switch": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Switch component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Table": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Table component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Tabs": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Tabs component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Textarea": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Textarea component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Toast": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Toast component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     },
     "Tooltip": {
       "latest": "1.0.0",
       "versions": ["1.0.0"],
       "description": "Tooltip component for WordPress",
-      "updatedAt": "2025-08-12T22:51:50.038Z"
+      "updatedAt": "2025-08-12T23:01:06.328Z"
     }
   }
 }
