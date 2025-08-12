@@ -1,6 +1,6 @@
 {
   "name": "wpsyde-ui",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Professional UI component manager for WordPress (shadcn/ui style)",
   "private": false,
   "scripts": {
@@ -40,7 +40,8 @@
     "wpsyde-ui": "scripts/wpsyde-cli.js"
   },
   "dependencies": {
-    "adm-zip": "^0.5.10"
+    "adm-zip": "^0.5.10",
+    "wpsyde-ui": "^1.0.6"
   },
   "devDependencies": {
     "prettier": "^3.0.0"
