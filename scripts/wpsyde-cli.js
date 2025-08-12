@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const { execFileSync } = require('child_process');
+const AdmZip = require('adm-zip');
 
 const REGISTRY_URL = 'https://registry.wpsyde.com';
 const CONFIG_FILE = 'wpsyde.json';
@@ -26,6 +26,7 @@ const colors = {
   blue: '\x1b[34m',
   magenta: '\x1b[35m',
   cyan: '\x1b[36m',
+  white: '\x1b[37m',
 };
 
 // Input validation and sanitization
@@ -231,20 +232,35 @@ async function add(componentName, version = 'latest') {
     // Extract component.zip
     log('🔓 Extracting component...', 'blue');
     try {
-      execFileSync('unzip', ['-o', zipPath, '-d', targetDir], {
-        stdio: 'inherit',
+      // Use Adm-zip for clean extraction with path filtering
+      const zip = new AdmZip(zipPath);
+
+      // Extract only the component files, skipping the nested structure
+      zip.getEntries().forEach(entry => {
+        if (entry.isDirectory) return;
+
+        // Check if this is a component file we want
+        const entryPath = entry.entryName;
+        const componentPath = `template-parts/components/${sanitizedComponentName}/`;
+
+        if (entryPath.startsWith(componentPath)) {
+          // Extract directly to target directory, removing the nested path
+          const relativePath = entryPath.replace(componentPath, '');
+          const targetPath = path.join(targetDir, relativePath);
+
+          // Ensure target directory exists
+          const targetDirPath = path.dirname(targetPath);
+          fs.mkdirSync(targetDirPath, { recursive: true });
+
+          // Extract the file
+          zip.extractEntryTo(entry, targetDirPath, false, true);
+        }
       });
-      fs.unlinkSync(zipPath); // Remove zip after extraction
+
+      // Clean up zip file
+      fs.unlinkSync(zipPath);
     } catch (err) {
-      warn('Failed to extract with unzip, trying with tar...');
-      try {
-        execFileSync('tar', ['-xf', zipPath, '-C', targetDir], {
-          stdio: 'inherit',
-        });
-        fs.unlinkSync(zipPath);
-      } catch (tarErr) {
-        error(`Failed to extract component: ${tarErr.message}`);
-      }
+      error(`Failed to extract component: ${err.message}`);
     }
 
     // Update installed list
@@ -309,7 +325,7 @@ function help() {
   log('  • Similar to shadcn/ui approach', 'white');
   log('\nRequirements:', 'cyan');
   log('  - Node.js (built-in, no npm install needed)', 'white');
-  log('  - unzip or tar command for extraction', 'white');
+  log('  - Pure JavaScript extraction (no external commands)', 'white');
 }
 
 // Main CLI logic

@@ -31,3 +31,7 @@ build/
 .tmp/
 .temp/
 package-lock.json
+
+# pnpm store and cache
+.pnpm-store/
+.pnpm-debug.log*

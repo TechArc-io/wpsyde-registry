@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      adm-zip:
+        specifier: ^0.5.10
+        version: 0.5.16
     devDependencies:
       prettier:
         specifier: ^3.0.0
@@ -14,11 +18,17 @@ importers:
 
 packages:
 
+  adm-zip@0.5.16:
+    resolution: {integrity: sha512-TGw5yVi4saajsSEgz25grObGHEUaDrniwvA2qwSC060KfqGPdglhvPMA2lPIoxs3PQIItj2iag35fONcQqgUaQ==}
+    engines: {node: '>=12.0'}
+
   prettier@3.6.2:
     resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
 snapshots:
+
+  adm-zip@0.5.16: {}
 
   prettier@3.6.2: {}
