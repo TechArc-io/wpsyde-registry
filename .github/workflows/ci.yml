@@ -96,8 +96,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ -d components ]; then
-            find components -type f -name manifest.json | while read -r m; do
+          if [ -d registry/components ]; then
+            find registry/components -type f -name manifest.json | while read -r m; do
               zip_path="$(dirname "$m")/component.zip"
               test -f "$zip_path"
               calc="sha256-$(openssl dgst -sha256 -binary "$zip_path" | openssl base64 -A)"
@@ -110,7 +110,7 @@ jobs:
               fi
             done
           else
-            echo "No components directory found, skipping archive integrity check"
+            echo "No registry/components directory found, skipping archive integrity check"
           fi
 
   verify-manifest-signatures:
@@ -171,10 +171,10 @@ jobs:
               else if (f === 'manifest.json') verifyManifest(p);
             }
           }
-          if (fs.existsSync('components')) {
-            walk('components');
+          if (fs.existsSync('registry/components')) {
+            walk('registry/components');
             console.log('All manifest signatures OK');
           } else {
-            console.log('No components directory found, skipping signature verification');
+            console.log('No registry/components directory found, skipping signature verification');
           }
           "

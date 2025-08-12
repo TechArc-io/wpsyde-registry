@@ -132,27 +132,19 @@ const server = http.createServer((req, res) => {
 
   // Handle component files
   if (pathname.startsWith('/components/')) {
-    // Security: Validate path to prevent directory traversal
-    const normalizedPath = path
-      .normalize(pathname)
-      .replace(/^(\.\.[\/\\])+/, '');
-    if (normalizedPath !== pathname) {
-      res.writeHead(400, { 'Content-Type': 'text/plain' });
-      res.end('Invalid path');
-      return;
-    }
+    // Security: Remove '/components' from the start and normalize the path
+    const relativePath = pathname.slice('/components'.length);
+    const resolvedPath = path.resolve(REGISTRY_DIR, '.' + relativePath);
 
-    const filePath = path.join(REGISTRY_DIR, normalizedPath);
-
-    // Additional security: Ensure the resolved path is within REGISTRY_DIR
-    const resolvedPath = path.resolve(filePath);
+    // Ensure the resolved path is within REGISTRY_DIR
     if (!resolvedPath.startsWith(path.resolve(REGISTRY_DIR))) {
-      res.writeHead(400, { 'Content-Type': 'text/plain' });
-      res.end('Invalid path');
+      res.writeHead(403, { 'Content-Type': 'text/plain' });
+      res.end('Forbidden');
+      warn(`Blocked path traversal attempt: ${pathname}`);
       return;
     }
 
-    if (serveFile(filePath, res)) {
+    if (serveFile(resolvedPath, res)) {
       success(`Served: ${pathname}`);
     } else {
       res.writeHead(404);
