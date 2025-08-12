@@ -40,26 +40,34 @@ async function verifyRegistry() {
 
   // Validate local JSON files
   console.log('\n📋 Local JSON validation:');
-  try {
-    const indexData = JSON.parse(fs.readFileSync('index.json', 'utf8'));
-    console.log('✅ index.json is valid JSON');
-    if (indexData.components && typeof indexData.components === 'object') {
-      console.log(`   Found ${Object.keys(indexData.components).length} component categories`);
+  if (fs.existsSync('index.json')) {
+    try {
+      const indexData = JSON.parse(fs.readFileSync('index.json', 'utf8'));
+      console.log('✅ index.json is valid JSON');
+      if (indexData.components && typeof indexData.components === 'object') {
+        console.log(`   Found ${Object.keys(indexData.components).length} component categories`);
+      }
+    } catch (e) {
+      console.log('❌ index.json is not valid JSON:', e.message);
     }
-  } catch (e) {
-    console.log('❌ index.json is not valid JSON:', e.message);
+  } else {
+    console.log('❌ index.json is missing, skipping JSON validation');
   }
 
-  try {
-    const healthData = JSON.parse(fs.readFileSync('health.json', 'utf8'));
-    console.log('✅ health.json is valid JSON');
-    if (healthData.status === 'ok' && healthData.ts) {
-      console.log('✅ health.json has correct structure');
-    } else {
-      console.log('⚠️  health.json structure may need adjustment');
+  if (fs.existsSync('health.json')) {
+    try {
+      const healthData = JSON.parse(fs.readFileSync('health.json', 'utf8'));
+      console.log('✅ health.json is valid JSON');
+      if (healthData.status === 'ok' && healthData.ts) {
+        console.log('✅ health.json has correct structure');
+      } else {
+        console.log('⚠️  health.json structure may need adjustment');
+      }
+    } catch (e) {
+      console.log('❌ health.json is not valid JSON:', e.message);
     }
-  } catch (e) {
-    console.log('❌ health.json is not valid JSON:', e.message);
+  } else {
+    console.log('❌ health.json is missing, skipping JSON validation');
   }
 
   // Check _headers format
