@@ -1,12 +1,11 @@
 # CODEOWNERS for critical registry files
-# Replace @techarcio/core-team with your actual team. Owners must have write access.
 
 # Registry metadata and headers
-/index.json                         @asemabdou @techarcio/core-team
-/_headers                           @asemabdou @techarcio/core-team
-/public-key.pem                     @asemabdou @techarcio/core-team
+/index.json                         @asemabdou @asemdevs
+/_headers                           @asemabdou @asemdevs
+/public-key.pem                     @asemabdou @asemdevs
 
 # Component artifacts and manifests
-/components/**/manifest.json        @asemabdou @techarcio/core-team
-/components/**/component.zip        @asemabdou @techarcio/core-team
+/components/**/manifest.json        @asemabdou @asemdevs
+/components/**/component.zip        @asemabdou @asemdevs
 
