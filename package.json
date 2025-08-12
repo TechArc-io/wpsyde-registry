@@ -1,6 +1,6 @@
 {
   "name": "wpsyde-ui",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Professional UI component manager for WordPress (shadcn/ui style)",
   "private": false,
   "scripts": {

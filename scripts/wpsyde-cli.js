@@ -11,6 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const http = require('http');
 const AdmZip = require('adm-zip');
 
 const REGISTRY_URL = 'https://registry.wpsyde.com';
@@ -71,7 +72,7 @@ function warn(message) {
 function fetch(url, showProgress = false, binary = false) {
   return new Promise((resolve, reject) => {
     const isHttps = url.startsWith('https://');
-    const httpModule = isHttps ? require('https') : require('http');
+    const httpModule = isHttps ? https : http;
 
     const request = httpModule.get(url, res => {
       if (res.statusCode !== 200) {
@@ -103,12 +104,26 @@ function fetch(url, showProgress = false, binary = false) {
         if (showProgress) {
           process.stdout.write('\n');
         }
+
+        // Check if we got HTML instead of expected content
+        if (!binary && data.trim().startsWith('<!doctype')) {
+          reject(
+            new Error(
+              'Registry returned HTML instead of expected content. The registry may not be properly deployed.'
+            )
+          );
+          return;
+        }
+
         resolve(data);
       });
     });
 
     request.on('error', reject);
-    request.setTimeout(30000, () => request.destroy()); // 30s timeout
+    request.setTimeout(30000, () => {
+      request.destroy();
+      reject(new Error('Request timeout'));
+    });
   });
 }
 
@@ -307,7 +322,80 @@ async function add(componentName, version = 'latest') {
       'white'
     );
   } catch (err) {
-    error(`Failed to add component: ${err.message}`);
+    if (err.message.includes('HTML instead of expected content')) {
+      error(`Registry Error: ${err.message}`);
+      log('\n🔧 Troubleshooting:', 'cyan');
+      log('• The WPSyde registry may not be properly deployed', 'white');
+      log('• Check if Cloudflare Pages deployment is complete', 'white');
+      log('• Try again in a few minutes', 'white');
+      log('• Contact support if the issue persists', 'white');
+    } else {
+      error(`Failed to add component: ${err.message}`);
+    }
+  }
+}
+
+// Add multiple components
+async function addMultiple(componentNames, version) {
+  log(`\n🚀 Adding ${componentNames.length} components...`, 'bright');
+
+  let successCount = 0;
+  let failCount = 0;
+
+  for (const componentName of componentNames) {
+    try {
+      await add(componentName, version);
+      successCount++;
+      log(''); // Add spacing between components
+    } catch (err) {
+      failCount++;
+      warn(`Failed to add ${componentName}: ${err.message}`);
+      // Continue with other components
+    }
+  }
+
+  if (failCount === 0) {
+    success(`\n🎉 Successfully installed all ${successCount} components!`);
+  } else {
+    warn(
+      `\n⚠️  Completed with ${failCount} failures. ${successCount} components installed successfully.`
+    );
+  }
+}
+
+// Add all available components
+async function addAll() {
+  log('\n🚀 Adding all available components...', 'bright');
+
+  try {
+    // Fetch component list
+    const response = await fetch(`${REGISTRY_URL}/index.json`);
+    const data = JSON.parse(response);
+
+    if (!data.components || Object.keys(data.components).length === 0) {
+      error('No components found in registry');
+    }
+
+    const componentNames = Object.keys(data.components);
+    log(`📋 Found ${componentNames.length} components to install`, 'cyan');
+
+    // Confirm with user
+    log('\n⚠️  This will install ALL components. Continue? (y/N)', 'yellow');
+
+    process.stdin.once('data', async data => {
+      const answer = data.trim().toLowerCase();
+      if (answer === 'y' || answer === 'yes') {
+        await addMultiple(componentNames, 'latest');
+      } else {
+        log('Installation cancelled.', 'yellow');
+      }
+      process.exit(0);
+    });
+
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
+  } catch (err) {
+    error(`Failed to fetch component list: ${err.message}`);
   }
 }
 
@@ -373,13 +461,18 @@ function help() {
     '  add <name> [version]    Install a component (default: latest)',
     'white'
   );
+  log('  add <name1> <name2>...  Install multiple components', 'white');
+  log('  add --all               Install all available components', 'white');
   log('  remove <name>           Remove an installed component', 'white');
+  log('  health                  Check registry health', 'white');
   log('  help                    Show this help message', 'white');
   log('\nExamples:', 'cyan');
   log('  npx wpsyde-ui init', 'white');
   log('  npx wpsyde-ui list', 'white');
   log('  npx wpsyde-ui add Button', 'white');
   log('  npx wpsyde-ui add Card 1.0.0', 'white');
+  log('  npx wpsyde-ui add Button Card Input', 'white');
+  log('  npx wpsyde-ui add --all', 'white');
   log('  npx wpsyde-ui remove Button', 'white');
   log('\nHow it works:', 'cyan');
   log('  • Downloads component files directly from registry', 'white');
@@ -392,6 +485,47 @@ function help() {
   log('\nRequirements:', 'cyan');
   log('  - Node.js (built-in, no npm install needed)', 'white');
   log('  - Pure JavaScript extraction (no external commands)', 'white');
+}
+
+// Check registry health
+async function checkRegistryHealth() {
+  try {
+    log('\n🔍 Checking registry health...', 'cyan');
+
+    const response = await fetch(`${REGISTRY_URL}/index.json`);
+    const data = JSON.parse(response);
+
+    if (!data.components || Object.keys(data.components).length === 0) {
+      warn('Registry index is empty or invalid');
+      return false;
+    }
+
+    const componentCount = Object.keys(data.components).length;
+    success(`Registry is healthy - ${componentCount} components available`);
+
+    // Test a specific component endpoint
+    const testComponent = Object.keys(data.components)[0];
+    const testVersion = data.components[testComponent].latest;
+
+    try {
+      const manifestResponse = await fetch(
+        `${REGISTRY_URL}/components/${testComponent}/${testVersion}/manifest.json`
+      );
+      if (manifestResponse.trim().startsWith('<!doctype')) {
+        warn('Component endpoints are returning HTML instead of JSON');
+        log('This indicates a deployment issue with the registry', 'yellow');
+        return false;
+      }
+      success('Component endpoints are working correctly');
+      return true;
+    } catch (manifestErr) {
+      warn(`Component endpoint test failed: ${manifestErr.message}`);
+      return false;
+    }
+  } catch (err) {
+    error(`Registry health check failed: ${err.message}`);
+    return false;
+  }
 }
 
 // Main CLI logic
@@ -414,11 +548,34 @@ function main() {
     case 'add':
       if (!args[1]) {
         error(
-          'Component name required. Usage: npx wpsyde-ui add <ComponentName>'
+          'Component name required. Usage: npx wpsyde-ui add <ComponentName> [<ComponentName> ...] or npx wpsyde-ui add --all'
         );
       }
-      add(sanitizeInput(args[1]), args[2] ? sanitizeInput(args[2]) : 'latest');
+
+      // Check for --all flag
+      if (args[1] === '--all') {
+        addAll();
+        return;
+      }
+
+      // Check for multiple components
+      const components = args.slice(1);
+      const version = components[components.length - 1].match(/^\d+\.\d+\.\d+$/)
+        ? components.pop()
+        : 'latest';
+
+      if (components.length === 1) {
+        // Single component
+        add(sanitizeInput(components[0]), version);
+      } else {
+        // Multiple components
+        addMultiple(
+          components.map(c => sanitizeInput(c)),
+          version
+        );
+      }
       break;
+
     case 'remove':
       if (!args[1]) {
         error(
@@ -426,6 +583,9 @@ function main() {
         );
       }
       remove(sanitizeInput(args[1]));
+      break;
+    case 'health':
+      checkRegistryHealth();
       break;
     default:
       error(`Unknown command: ${command}. Run "npx wpsyde-ui help" for usage`);
@@ -437,4 +597,14 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { init, list, add, remove, help, sanitizeInput };
+module.exports = {
+  init,
+  list,
+  add,
+  addMultiple,
+  addAll,
+  remove,
+  health: checkRegistryHealth,
+  help,
+  sanitizeInput,
+};

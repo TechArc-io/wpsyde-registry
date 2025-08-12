@@ -35,10 +35,10 @@
     }
   ],
   "dependencies": [],
-  "createdAt": "2025-08-12T22:01:15.342Z",
-  "updatedAt": "2025-08-12T22:01:15.342Z",
+  "createdAt": "2025-08-12T23:01:06.303Z",
+  "updatedAt": "2025-08-12T23:01:06.303Z",
   "archives": {
     "zip": "component.zip",
-    "integrity": "sha256-vZvsZjmp14eRN4rRuAOhJMjMYZ2AhpfLrNprjEWMp+s="
+    "integrity": "sha256-TuH/0KdKKGngapiE95hmImZc3YXnVlVy3l7gg6ND2u4="
   }
 }
