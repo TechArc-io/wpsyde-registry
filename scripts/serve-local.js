@@ -132,7 +132,26 @@ const server = http.createServer((req, res) => {
 
   // Handle component files
   if (pathname.startsWith('/components/')) {
-    const filePath = path.join(REGISTRY_DIR, pathname);
+    // Security: Validate path to prevent directory traversal
+    const normalizedPath = path
+      .normalize(pathname)
+      .replace(/^(\.\.[\/\\])+/, '');
+    if (normalizedPath !== pathname) {
+      res.writeHead(400, { 'Content-Type': 'text/plain' });
+      res.end('Invalid path');
+      return;
+    }
+
+    const filePath = path.join(REGISTRY_DIR, normalizedPath);
+
+    // Additional security: Ensure the resolved path is within REGISTRY_DIR
+    const resolvedPath = path.resolve(filePath);
+    if (!resolvedPath.startsWith(path.resolve(REGISTRY_DIR))) {
+      res.writeHead(400, { 'Content-Type': 'text/plain' });
+      res.end('Invalid path');
+      return;
+    }
+
     if (serveFile(filePath, res)) {
       success(`Served: ${pathname}`);
     } else {
