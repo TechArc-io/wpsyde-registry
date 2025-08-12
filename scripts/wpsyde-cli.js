@@ -11,6 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const http = require('http');
 const AdmZip = require('adm-zip');
 
 const REGISTRY_URL = 'https://registry.wpsyde.com';
@@ -70,7 +71,10 @@ function warn(message) {
 // HTTP helper with progress
 function fetch(url, showProgress = false, binary = false) {
   return new Promise((resolve, reject) => {
-    const request = https.get(url, res => {
+    const isHttps = url.startsWith('https://');
+    const httpModule = isHttps ? https : http;
+
+    const request = httpModule.get(url, res => {
       if (res.statusCode !== 200) {
         reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
         return;
@@ -335,17 +339,28 @@ async function add(componentName, version = 'latest') {
 async function addMultiple(componentNames, version) {
   log(`\n🚀 Adding ${componentNames.length} components...`, 'bright');
 
+  let successCount = 0;
+  let failCount = 0;
+
   for (const componentName of componentNames) {
     try {
       await add(componentName, version);
+      successCount++;
       log(''); // Add spacing between components
     } catch (err) {
+      failCount++;
       warn(`Failed to add ${componentName}: ${err.message}`);
       // Continue with other components
     }
   }
 
-  success(`\n🎉 Completed adding ${componentNames.length} components!`);
+  if (failCount === 0) {
+    success(`\n🎉 Successfully installed all ${successCount} components!`);
+  } else {
+    warn(
+      `\n⚠️  Completed with ${failCount} failures. ${successCount} components installed successfully.`
+    );
+  }
 }
 
 // Add all available components
@@ -366,8 +381,6 @@ async function addAll() {
 
     // Confirm with user
     log('\n⚠️  This will install ALL components. Continue? (y/N)', 'yellow');
-    process.stdin.resume();
-    process.stdin.setEncoding('utf8');
 
     process.stdin.once('data', async data => {
       const answer = data.trim().toLowerCase();
@@ -378,6 +391,9 @@ async function addAll() {
       }
       process.exit(0);
     });
+
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
   } catch (err) {
     error(`Failed to fetch component list: ${err.message}`);
   }
@@ -532,7 +548,7 @@ function main() {
     case 'add':
       if (!args[1]) {
         error(
-          'Component name required. Usage: npx wpsyde-ui add <ComponentName> [--all]'
+          'Component name required. Usage: npx wpsyde-ui add <ComponentName> [<ComponentName> ...] or npx wpsyde-ui add --all'
         );
       }
 

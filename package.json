@@ -40,8 +40,7 @@
     "wpsyde-ui": "scripts/wpsyde-cli.js"
   },
   "dependencies": {
-    "adm-zip": "^0.5.10",
-    "wpsyde-ui": "^1.0.6"
+    "adm-zip": "^0.5.10"
   },
   "devDependencies": {
     "prettier": "^3.0.0"
