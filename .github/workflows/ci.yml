@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 # Least-privilege by default
 permissions:
@@ -39,6 +39,28 @@ jobs:
       - name: Check critical files exist
         run: |
           test -f _headers
+
+  format-check:
+    name: Check code formatting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check formatting
+        run: pnpm format:check
 
   verify-public-key:
     name: Verify public key
@@ -105,7 +127,7 @@ jobs:
             console.log('No public-key.pem found, skipping signature verification');
             process.exit(0);
           }
-          
+
           const pub = fs.readFileSync('public-key.pem','utf8')
             .replace(/-----.*KEY-----/g,'').replace(/\s+/g,'');
           const pubKey = Buffer.from(pub, 'base64');
@@ -137,4 +159,3 @@ jobs:
             console.log('No components directory found, skipping signature verification');
           }
           "
-

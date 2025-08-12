@@ -2,7 +2,7 @@ name: Deploy Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
@@ -20,10 +20,10 @@ jobs:
           projectName: wpsyde-registry
           directory: .
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Purge index.json
         run: |
           curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}/purge_cache" \
             -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
             -H "Content-Type: application/json" \
-            --data '{"files":["https://registry.wpsyde.com/index.json"]}' 
+            --data '{"files":["https://registry.wpsyde.com/index.json"]}'

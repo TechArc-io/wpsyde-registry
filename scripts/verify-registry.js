@@ -14,11 +14,15 @@ const path = require('path');
 
 async function fetch(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve({ status: res.statusCode, data, headers: res.headers }));
-    }).on('error', reject);
+    https
+      .get(url, res => {
+        let data = '';
+        res.on('data', chunk => (data += chunk));
+        res.on('end', () =>
+          resolve({ status: res.statusCode, data, headers: res.headers })
+        );
+      })
+      .on('error', reject);
   });
 }
 
@@ -27,9 +31,14 @@ async function verifyRegistry() {
 
   // Local file verification first
   console.log('📁 Local file verification:');
-  
+
   // Check critical files exist
-  const criticalFiles = ['index.json', 'health.json', '_headers', 'public-key.pem'];
+  const criticalFiles = [
+    'index.json',
+    'health.json',
+    '_headers',
+    'public-key.pem',
+  ];
   for (const file of criticalFiles) {
     if (fs.existsSync(file)) {
       console.log(`✅ ${file} exists`);
@@ -45,7 +54,9 @@ async function verifyRegistry() {
       const indexData = JSON.parse(fs.readFileSync('index.json', 'utf8'));
       console.log('✅ index.json is valid JSON');
       if (indexData.components && typeof indexData.components === 'object') {
-        console.log(`   Found ${Object.keys(indexData.components).length} component categories`);
+        console.log(
+          `   Found ${Object.keys(indexData.components).length} component categories`
+        );
       }
     } catch (e) {
       console.log('❌ index.json is not valid JSON:', e.message);
@@ -74,8 +85,12 @@ async function verifyRegistry() {
   console.log('\n🔒 Headers validation:');
   try {
     const headersContent = fs.readFileSync('_headers', 'utf8');
-    if (headersContent.includes('Cache-Control: public, max-age=60') && 
-        headersContent.includes('Cache-Control: public, max-age=31536000, immutable')) {
+    if (
+      headersContent.includes('Cache-Control: public, max-age=60') &&
+      headersContent.includes(
+        'Cache-Control: public, max-age=31536000, immutable'
+      )
+    ) {
       console.log('✅ _headers has proper cache directives');
     } else {
       console.log('⚠️  _headers may need cache directive adjustments');
@@ -104,7 +119,7 @@ async function verifyRegistry() {
     const indexResponse = await fetch(`${REGISTRY_URL}/index.json`);
     if (indexResponse.status === 200) {
       console.log('✅ Registry is accessible');
-      
+
       // Check cache headers
       const cacheControl = indexResponse.headers['cache-control'];
       if (cacheControl && cacheControl.includes('max-age=60')) {
@@ -121,7 +136,7 @@ async function verifyRegistry() {
     const keyResponse = await fetch(`${REGISTRY_URL}/public-key.pem`);
     if (keyResponse.status === 200) {
       console.log('✅ Public key is accessible');
-      
+
       // Check cache headers
       const cacheControl = keyResponse.headers['cache-control'];
       if (cacheControl && cacheControl.includes('immutable')) {
@@ -139,7 +154,9 @@ async function verifyRegistry() {
     if (headersResponse.status === 200) {
       console.log('✅ _headers file is accessible');
     } else {
-      console.log('⚠️  _headers file not accessible (this is normal for Cloudflare Pages)');
+      console.log(
+        '⚠️  _headers file not accessible (this is normal for Cloudflare Pages)'
+      );
     }
 
     // 4. Parse index.json
@@ -148,7 +165,9 @@ async function verifyRegistry() {
       const indexData = JSON.parse(indexResponse.data);
       if (indexData.components && typeof indexData.components === 'object') {
         console.log('✅ index.json has valid structure');
-        console.log(`   Found ${Object.keys(indexData.components).length} component categories`);
+        console.log(
+          `   Found ${Object.keys(indexData.components).length} component categories`
+        );
       } else {
         console.log('⚠️  index.json structure may need adjustment');
       }
@@ -158,13 +177,14 @@ async function verifyRegistry() {
 
     console.log('\n🎉 Registry verification complete!');
     console.log('\nNext steps:');
-    console.log('1. Replace public-key.pem with your actual Ed25519 public key');
+    console.log(
+      '1. Replace public-key.pem with your actual Ed25519 public key'
+    );
     console.log('2. Test component installation with your CLI');
     console.log('3. Verify component integrity checks work');
-
   } catch (error) {
     console.error('❌ Verification failed:', error.message);
   }
 }
 
-verifyRegistry(); 
+verifyRegistry();

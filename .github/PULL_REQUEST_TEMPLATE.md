@@ -9,4 +9,3 @@ Describe the change and why it is needed.
 - [ ] `index.json` and any `components/**/manifest.json` are valid JSON.
 - [ ] CI passes.
 - [ ] If modifying critical files (`index.json`, `_headers`, `public-key.pem`, component artifacts), reviewers include code owners.
-
