@@ -1,0 +1,11 @@
+{
+  "registry": "https://registry.wpsyde.com",
+  "themePath": "theme",
+  "componentsDir": "theme/template-parts/components",
+  "blocksDir": "theme/template-parts/blocks",
+  "acfJsonDir": "acf-json",
+  "channels": [
+    "stable"
+  ],
+  "installed": {}
+}

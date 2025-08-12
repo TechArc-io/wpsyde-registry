@@ -1,0 +1,40 @@
+{
+  "name": "Switch",
+  "version": "1.0.0",
+  "description": "Switch component",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Switch/component.php",
+      "dest": "theme/template-parts/components/Switch/component.php",
+      "integrity": "sha256-kL/I/IM9C8Q5gCReRXenuPLeSVctThL25BcPAVlj+64="
+    },
+    {
+      "path": "template-parts/components/Switch/README.md",
+      "dest": "theme/template-parts/components/Switch/README.md",
+      "integrity": ""
+    },
+    {
+      "path": "template-parts/components/Switch/example.php",
+      "dest": "theme/template-parts/components/Switch/example.php",
+      "integrity": ""
+    },
+    {
+      "path": "template-parts/components/Switch/enhancer.js",
+      "dest": "theme/template-parts/components/Switch/enhancer.js",
+      "integrity": ""
+    },
+    {
+      "path": "template-parts/components/Switch/styles.css",
+      "dest": "theme/template-parts/components/Switch/styles.css",
+      "integrity": ""
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Switch/1.0.0/component.zip",
+    "integrity": "sha256-814d46a8c8d301044514f19302eb4fb3152afd72c178914bf31b074963a9f9ec"
+  },
+  "pro": false,
+  "checksum": "sha256-814d46a8c8d301044514f19302eb4fb3152afd72c178914bf31b074963a9f9ec",
+  "signature": ""
+}

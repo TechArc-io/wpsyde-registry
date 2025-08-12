@@ -1,0 +1,40 @@
+{
+  "name": "Avatar",
+  "version": "1.0.0",
+  "description": "Avatar",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Avatar/component.php",
+      "dest": "theme/template-parts/components/Avatar/component.php",
+      "integrity": "sha256-T6RTfcimeWFlRtzQ8GsFJfDyOU2XwjyXGI758hfxYCs="
+    },
+    {
+      "path": "template-parts/components/Avatar/README.md",
+      "dest": "theme/template-parts/components/Avatar/README.md",
+      "integrity": "sha256-iLDXP9ioR5/NgCm7uUnzC0YZre83s706D0PsMTA8PUw="
+    },
+    {
+      "path": "template-parts/components/Avatar/example.php",
+      "dest": "theme/template-parts/components/Avatar/example.php",
+      "integrity": "sha256-vE3fh9bS0rGtIY7pu2Njy6muZtphFon34BzAfyVxcaE="
+    },
+    {
+      "path": "template-parts/components/Avatar/enhancer.js",
+      "dest": "theme/template-parts/components/Avatar/enhancer.js",
+      "integrity": "sha256-4KlUfsEjmxiV0kYopmukZab2mKpoIr0kokNxoiWJFTY="
+    },
+    {
+      "path": "template-parts/components/Avatar/styles.css",
+      "dest": "theme/template-parts/components/Avatar/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Avatar/1.0.0/component.zip",
+    "integrity": "sha256-639f6e0d86fd87aac44f62db0602bd6b928627c2f4faa70ece71bf07659091d9"
+  },
+  "pro": false,
+  "checksum": "sha256-639f6e0d86fd87aac44f62db0602bd6b928627c2f4faa70ece71bf07659091d9",
+  "signature": ""
+}

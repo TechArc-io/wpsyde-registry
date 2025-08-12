@@ -1,0 +1,40 @@
+{
+  "name": "Separator",
+  "version": "1.0.0",
+  "description": "Separator",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Separator/component.php",
+      "dest": "theme/template-parts/components/Separator/component.php",
+      "integrity": "sha256-HQbMilOnlvgIgDyxyiGpsG830+ArS182QS+5Cwb+ZZQ="
+    },
+    {
+      "path": "template-parts/components/Separator/README.md",
+      "dest": "theme/template-parts/components/Separator/README.md",
+      "integrity": "sha256-sVgarxOOXB6KeLYDIEARwr0Ae7/DkQiACnBX9Afqwjo="
+    },
+    {
+      "path": "template-parts/components/Separator/example.php",
+      "dest": "theme/template-parts/components/Separator/example.php",
+      "integrity": "sha256-S2fcpchFQU0ZhkwKMVRFenaRhmumWSQxuCrlHALb39g="
+    },
+    {
+      "path": "template-parts/components/Separator/enhancer.js",
+      "dest": "theme/template-parts/components/Separator/enhancer.js",
+      "integrity": "sha256-Rg5eBKPQIc9eXjXGu6KKqw5tWoKKBPc6EgLS33xcpXc="
+    },
+    {
+      "path": "template-parts/components/Separator/styles.css",
+      "dest": "theme/template-parts/components/Separator/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Separator/1.0.0/component.zip",
+    "integrity": "sha256-ba2c71bf55de80b03776bfe123c9c1fa01b9dac7ff7cacb77d0c6aac972a05d8"
+  },
+  "pro": false,
+  "checksum": "sha256-ba2c71bf55de80b03776bfe123c9c1fa01b9dac7ff7cacb77d0c6aac972a05d8",
+  "signature": ""
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Tabs",
+  "version": "1.0.0",
+  "description": "Tabs",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Tabs/component.php",
+      "dest": "theme/template-parts/components/Tabs/component.php",
+      "integrity": "sha256-PQ9FqHkPF0+Kn1Vv8uSGMnyR3+7/JoUv1en2eCDjBE4="
+    },
+    {
+      "path": "template-parts/components/Tabs/README.md",
+      "dest": "theme/template-parts/components/Tabs/README.md",
+      "integrity": "sha256-lk6cWiSvcfV9E2zvQQEj2Wx6ZF/9e02KIUXl+Sj2P1A="
+    },
+    {
+      "path": "template-parts/components/Tabs/example.php",
+      "dest": "theme/template-parts/components/Tabs/example.php",
+      "integrity": "sha256-jf7epQz/7TE1HFxwROVrTOhnPkta4TlRCQg08YF5P84="
+    },
+    {
+      "path": "template-parts/components/Tabs/enhancer.js",
+      "dest": "theme/template-parts/components/Tabs/enhancer.js",
+      "integrity": "sha256-HExVWjoFJa/scjgFPpEdw9xEBKDac1jnN+lTv95v76U="
+    },
+    {
+      "path": "template-parts/components/Tabs/styles.css",
+      "dest": "theme/template-parts/components/Tabs/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Tabs/1.0.0/component.zip",
+    "integrity": "sha256-562af3bcdbb9621d2c671c0ce8eb1afcc9d2dba9a7f7e6d7cfb1d328acb39d6a"
+  },
+  "pro": false,
+  "checksum": "sha256-562af3bcdbb9621d2c671c0ce8eb1afcc9d2dba9a7f7e6d7cfb1d328acb39d6a",
+  "signature": ""
+}

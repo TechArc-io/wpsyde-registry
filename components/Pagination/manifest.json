@@ -1,0 +1,40 @@
+{
+  "name": "Pagination",
+  "version": "1.0.0",
+  "description": "Pagination",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Pagination/component.php",
+      "dest": "theme/template-parts/components/Pagination/component.php",
+      "integrity": "sha256-0p92hqdxAdadUX729P6da2czgnh6DM9sX6W5qbvJkg8="
+    },
+    {
+      "path": "template-parts/components/Pagination/README.md",
+      "dest": "theme/template-parts/components/Pagination/README.md",
+      "integrity": "sha256-cpKNMPWPA8IIaTIkPUpKIAN1wBSW+Vj7k/sCeQahYQs="
+    },
+    {
+      "path": "template-parts/components/Pagination/example.php",
+      "dest": "theme/template-parts/components/Pagination/example.php",
+      "integrity": "sha256-vxrbZfFgfZ3SGwzkAB9XC9D/udD+jukf7TQcPSDe98w="
+    },
+    {
+      "path": "template-parts/components/Pagination/enhancer.js",
+      "dest": "theme/template-parts/components/Pagination/enhancer.js",
+      "integrity": "sha256-6OKIfShjq7lUeVK3w+HtSpIrDlHgiNAKt4/EypsdXD8="
+    },
+    {
+      "path": "template-parts/components/Pagination/styles.css",
+      "dest": "theme/template-parts/components/Pagination/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Pagination/1.0.0/component.zip",
+    "integrity": "sha256-5c1b7197d4f778d6b17ded87caf5309c0353ca4cb41d483723eb10ea6ebebc78"
+  },
+  "pro": false,
+  "checksum": "sha256-5c1b7197d4f778d6b17ded87caf5309c0353ca4cb41d483723eb10ea6ebebc78",
+  "signature": ""
+}

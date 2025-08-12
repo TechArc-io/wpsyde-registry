@@ -1,7 +1,7 @@
 {
   "name": "wpsyde-ui",
-  "version": "1.0.4",
-  "description": "Professional UI component manager for WordPress (shadcn/ui style)",
+  "version": "1.0.5",
+  "description": "Professional UI component manager for WordPress (WordPress-native style)",
   "private": false,
   "scripts": {
     "verify": "node scripts/verify-registry.js",
@@ -10,10 +10,24 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "prettier --check . && node scripts/verify-registry.js",
+    
     "wpsyde": "node scripts/wpsyde-cli.js",
     "wpsyde:init": "node scripts/wpsyde-cli.js init",
     "wpsyde:list": "node scripts/wpsyde-cli.js list",
-    "wpsyde:add": "node scripts/wpsyde-cli.js add"
+    "wpsyde:add": "node scripts/wpsyde-cli.js add",
+    "wpsyde:remove": "node scripts/wpsyde-cli.js remove",
+    
+    "wpsyde:pack": "node scripts/generate-component-packaging.js",
+    "wpsyde:build-registry": "node scripts/build-registry.js --version=1.0.0",
+    
+    "development:tailwind:frontend": "postcss ./tailwind.css -o ./theme/style.css --verbose",
+    "development:tailwind:editor": "cross-env _TW_TARGET=editor postcss ./tailwind.css -o ./theme/style-editor.css",
+    "development:esbuild": "esbuild ./javascript/script.js ./javascript/block-editor.js --target=esnext --bundle --outdir=./theme/js --out-extension:.js=.min.js",
+    "development": "run-p \"development:**\"",
+    "dev": "pnpm run watch",
+    "watch:tailwind:frontend": "pnpm run watch:tailwind:frontend -- --watch",
+    "watch:tailwind:editor": "pnpm run watch:tailwind:editor -- --watch",
+    "watch:esbuild": "esbuild ./javascript/script.js ./javascript/block-editor.js --target=esnext --bundle --outdir=./theme/js --out-extension:.js=.min.js --watch"
   },
   "repository": {
     "type": "git",
@@ -27,7 +41,7 @@
     "ui",
     "component-manager",
     "wordpress-themes",
-    "shadcn-ui"
+    "wordpress-components"
   ],
   "author": "TechArc.io <asem@techarcio.io>",
   "license": "MIT",

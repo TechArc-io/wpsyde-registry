@@ -1,0 +1,40 @@
+{
+  "name": "Accordion",
+  "version": "1.0.0",
+  "description": "Accordion",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Accordion/component.php",
+      "dest": "theme/template-parts/components/Accordion/component.php",
+      "integrity": "sha256-9M2t3Y8zEXuP9ORbubnsjZbvV0h5peLsX/pa4b4UqZo="
+    },
+    {
+      "path": "template-parts/components/Accordion/README.md",
+      "dest": "theme/template-parts/components/Accordion/README.md",
+      "integrity": "sha256-HdDNwlD/5EEE92HnAw8/yCTFyHDpBgP1mEAd3WHE5n4="
+    },
+    {
+      "path": "template-parts/components/Accordion/example.php",
+      "dest": "theme/template-parts/components/Accordion/example.php",
+      "integrity": "sha256-mrqfwcAmQ3pzYfBKkRKFryb8TDihlu+HOdnPmpKswaM="
+    },
+    {
+      "path": "template-parts/components/Accordion/enhancer.js",
+      "dest": "theme/template-parts/components/Accordion/enhancer.js",
+      "integrity": "sha256-XYWBK732Hd6DoeGpgvelXzI8TVVK+EZ1ITvT5SHZUk4="
+    },
+    {
+      "path": "template-parts/components/Accordion/styles.css",
+      "dest": "theme/template-parts/components/Accordion/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Accordion/1.0.0/component.zip",
+    "integrity": "sha256-bc1bf1369a8dd6f1970db9629946bbda72d903120a7d340f925fcf431c90ec74"
+  },
+  "pro": false,
+  "checksum": "sha256-bc1bf1369a8dd6f1970db9629946bbda72d903120a7d340f925fcf431c90ec74",
+  "signature": ""
+}
