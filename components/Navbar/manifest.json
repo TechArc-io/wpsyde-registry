@@ -1,0 +1,40 @@
+{
+  "name": "Navbar",
+  "version": "1.0.0",
+  "description": "Navbar",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Navbar/component.php",
+      "dest": "theme/template-parts/components/Navbar/component.php",
+      "integrity": "sha256-IaL97IAcNUr5W+0tOBQE/TS75J5JM9uXciXy/CLeHNM="
+    },
+    {
+      "path": "template-parts/components/Navbar/README.md",
+      "dest": "theme/template-parts/components/Navbar/README.md",
+      "integrity": "sha256-3eOCj+/tvDnWUZOZ6+Itde2G2tLYXijryWSm7Y6Hm3c="
+    },
+    {
+      "path": "template-parts/components/Navbar/example.php",
+      "dest": "theme/template-parts/components/Navbar/example.php",
+      "integrity": "sha256-5X1hVT32ibJRQDg/MXIbr+bN5F3GUI4YW7m61i02RoY="
+    },
+    {
+      "path": "template-parts/components/Navbar/enhancer.js",
+      "dest": "theme/template-parts/components/Navbar/enhancer.js",
+      "integrity": "sha256-n6uaYvPjUyIM2bcQpz/gAYMk0LOehB4OsQAMeWRYCXQ="
+    },
+    {
+      "path": "template-parts/components/Navbar/styles.css",
+      "dest": "theme/template-parts/components/Navbar/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Navbar/1.0.0/component.zip",
+    "integrity": "sha256-5fc001f79ad08f8fa3a1993c4bec7173db3ae39850d20d77856415ccb4cc8e88"
+  },
+  "pro": false,
+  "checksum": "sha256-5fc001f79ad08f8fa3a1993c4bec7173db3ae39850d20d77856415ccb4cc8e88",
+  "signature": ""
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Label",
+  "version": "1.0.0",
+  "description": "Label component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Label/component.php",
+      "dest": "template-parts/components/Label/label.php",
+      "integrity": "sha256-O00OxnL/bwmRYZtuXwsBoN/dJYEtwo5qnAUeRzgkd/U="
+    },
+    {
+      "path": "template-parts/components/Label/styles.css",
+      "dest": "template-parts/components/Label/Label.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Label/enhancer.js",
+      "dest": "template-parts/components/Label/label.js",
+      "integrity": "sha256-6ZwGvMWB8Wus9gRpKJ3j6LMp+NkXsiPE85zx6lPjegU="
+    },
+    {
+      "path": "template-parts/components/Label/example.php",
+      "dest": "template-parts/components/Label/example.php",
+      "integrity": "sha256-yM9xjxhlKsoPh/10PKxW7W59FbanB/E2Bbr5ojZCuOw="
+    },
+    {
+      "path": "template-parts/components/Label/README.md",
+      "dest": "template-parts/components/Label/README.md",
+      "integrity": "sha256-FKLTETlU6Ey+fWlZTRip4hSVBt32yBllcV9CGbiOxSE="
+    },
+    {
+      "path": "template-parts/components/Label/manifest.json",
+      "dest": "template-parts/components/Label/manifest.json",
+      "integrity": "sha256-5JK8NpoIfkvSCfwgijp6ZhSV8XhFgHlpyBrXKarwm+M="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.348Z",
+  "updatedAt": "2025-08-12T22:01:15.348Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-VlBPR07JrkMnnnAi1roXDEIYEn4Ld+W+OLy5G18T84A="
+  }
+}

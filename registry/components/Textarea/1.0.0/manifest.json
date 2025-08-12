@@ -1,0 +1,44 @@
+{
+  "name": "Textarea",
+  "version": "1.0.0",
+  "description": "Textarea component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Textarea/component.php",
+      "dest": "template-parts/components/Textarea/textarea.php",
+      "integrity": "sha256-EUjYvNB+hxEpXvPT9i1i2EeBkzKAgaZMtD+l61u0980="
+    },
+    {
+      "path": "template-parts/components/Textarea/styles.css",
+      "dest": "template-parts/components/Textarea/Textarea.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Textarea/enhancer.js",
+      "dest": "template-parts/components/Textarea/textarea.js",
+      "integrity": "sha256-ebCnFOX69JG1/8Ljilzgavb1tukb+LrNfvfDQ4JD/Eo="
+    },
+    {
+      "path": "template-parts/components/Textarea/example.php",
+      "dest": "template-parts/components/Textarea/example.php",
+      "integrity": "sha256-Nj7UNrYBs22ZZyj5PKkP7NT0sFUNyVTH7K8HeZrPw4Q="
+    },
+    {
+      "path": "template-parts/components/Textarea/README.md",
+      "dest": "template-parts/components/Textarea/README.md",
+      "integrity": "sha256-VL0CA5UIVUhlFzj+D/DfzHHmgXo2yFUHlzOfqrhMvDk="
+    },
+    {
+      "path": "template-parts/components/Textarea/manifest.json",
+      "dest": "template-parts/components/Textarea/manifest.json",
+      "integrity": "sha256-HDC9Eseh8BPWD5Dm90PTXD0AyF2Vm9IpjiAzSFAAbYQ="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.370Z",
+  "updatedAt": "2025-08-12T22:01:15.370Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-g8fXkiSucloTKfYSaXqSvOF2tuIKl2BF3U3ERr99jHg="
+  }
+}

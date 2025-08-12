@@ -1,0 +1,44 @@
+{
+  "name": "Alert",
+  "version": "1.0.0",
+  "description": "Alert component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Alert/component.php",
+      "dest": "template-parts/components/Alert/alert.php",
+      "integrity": "sha256-icmgy8I22Sc3z4710QBaJZzjIjtsbqOXGzJu5SJuAQw="
+    },
+    {
+      "path": "template-parts/components/Alert/styles.css",
+      "dest": "template-parts/components/Alert/Alert.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Alert/enhancer.js",
+      "dest": "template-parts/components/Alert/alert.js",
+      "integrity": "sha256-VHY1W3p3Enk2TVywUOGixJhn25kWspLY8DT029ReLiI="
+    },
+    {
+      "path": "template-parts/components/Alert/example.php",
+      "dest": "template-parts/components/Alert/example.php",
+      "integrity": "sha256-vdEC3/abySzSG0nQ51KwWF8oJqmWcNkjaimJfsjkqtU="
+    },
+    {
+      "path": "template-parts/components/Alert/README.md",
+      "dest": "template-parts/components/Alert/README.md",
+      "integrity": "sha256-xipl94TUtKkfFnl3J2tixHcMCbPpf1togimzv/7+zCs="
+    },
+    {
+      "path": "template-parts/components/Alert/manifest.json",
+      "dest": "template-parts/components/Alert/manifest.json",
+      "integrity": "sha256-SJ6/r90h5iKQg38ny4Tgp+9TUlKaSji1gVyNaNvuLDE="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.330Z",
+  "updatedAt": "2025-08-12T22:01:15.330Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-+VI7yqKgRYZC87NzdiiJPr9Kme7v8Vkkei+OHcGIXgU="
+  }
+}

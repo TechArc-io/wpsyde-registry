@@ -1,0 +1,40 @@
+{
+  "name": "Radio",
+  "version": "1.0.0",
+  "description": "Radio",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Radio/component.php",
+      "dest": "theme/template-parts/components/Radio/component.php",
+      "integrity": "sha256-1KHnBpkwnRBjxe6kImY95GfWoWOT9NAI+C4HKGAlriU="
+    },
+    {
+      "path": "template-parts/components/Radio/README.md",
+      "dest": "theme/template-parts/components/Radio/README.md",
+      "integrity": "sha256-rJcLR87wR1U/yCxe6cayYahULKl/Nl+j//pPgcQM3UQ="
+    },
+    {
+      "path": "template-parts/components/Radio/example.php",
+      "dest": "theme/template-parts/components/Radio/example.php",
+      "integrity": "sha256-2dAhMXmqKHSbYzkDmidWttYI9FLWSXwSPqlvNw4GkNo="
+    },
+    {
+      "path": "template-parts/components/Radio/enhancer.js",
+      "dest": "theme/template-parts/components/Radio/enhancer.js",
+      "integrity": "sha256-vZA5v7tOGMXiZOJH6viA1xL15NcF/zjb8XgdxXvGoxI="
+    },
+    {
+      "path": "template-parts/components/Radio/styles.css",
+      "dest": "theme/template-parts/components/Radio/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Radio/1.0.0/component.zip",
+    "integrity": "sha256-e7c2f43173b6a8698edc670cc04cebc135fad1d0f44ff98dcf77cfb0b8d2f9b6"
+  },
+  "pro": false,
+  "checksum": "sha256-e7c2f43173b6a8698edc670cc04cebc135fad1d0f44ff98dcf77cfb0b8d2f9b6",
+  "signature": ""
+}

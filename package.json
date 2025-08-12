@@ -1,6 +1,6 @@
 {
   "name": "wpsyde-ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Professional UI component manager for WordPress (shadcn/ui style)",
   "private": false,
   "scripts": {
@@ -13,7 +13,10 @@
     "wpsyde": "node scripts/wpsyde-cli.js",
     "wpsyde:init": "node scripts/wpsyde-cli.js init",
     "wpsyde:list": "node scripts/wpsyde-cli.js list",
-    "wpsyde:add": "node scripts/wpsyde-cli.js add"
+    "wpsyde:add": "node scripts/wpsyde-cli.js add",
+    "build:registry": "node scripts/build-registry.js",
+    "build:packaging": "node scripts/package-components.js",
+    "serve:local": "node scripts/serve-local.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +38,9 @@
   "main": "scripts/wpsyde-cli.js",
   "bin": {
     "wpsyde-ui": "scripts/wpsyde-cli.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10"
   },
   "devDependencies": {
     "prettier": "^3.0.0"

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * WPSyde UI - Professional Component Manager (shadcn/ui style)
+ * WPSyde UI - Professional Component Manager (WordPress-native style)
  * Usage: npx wpsyde-ui add Button
  *
  * This CLI downloads and installs WordPress components from the WPSyde registry.
@@ -11,7 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const { execFileSync } = require('child_process');
+const AdmZip = require('adm-zip');
 
 const REGISTRY_URL = 'https://registry.wpsyde.com';
 const CONFIG_FILE = 'wpsyde.json';
@@ -26,6 +26,7 @@ const colors = {
   blue: '\x1b[34m',
   magenta: '\x1b[35m',
   cyan: '\x1b[36m',
+  white: '\x1b[37m',
 };
 
 // Input validation and sanitization
@@ -69,7 +70,10 @@ function warn(message) {
 // HTTP helper with progress
 function fetch(url, showProgress = false, binary = false) {
   return new Promise((resolve, reject) => {
-    const request = https.get(url, res => {
+    const isHttps = url.startsWith('https://');
+    const httpModule = isHttps ? require('https') : require('http');
+
+    const request = httpModule.get(url, res => {
       if (res.statusCode !== 200) {
         reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
         return;
@@ -160,7 +164,7 @@ async function list() {
   }
 }
 
-// Add a component (shadcn style)
+// Add a component (WordPress style)
 async function add(componentName, version = 'latest') {
   try {
     // Validate and sanitize inputs
@@ -204,13 +208,12 @@ async function add(componentName, version = 'latest') {
 
     log(`📦 Installing ${sanitizedComponentName}@${targetVersion}`, 'cyan');
 
-    // Create directories
-    const targetDir = path.join(
+    // Create WordPress-style component directory
+    const componentDir = path.join(
       config.componentsDir,
-      sanitizedComponentName,
-      targetVersion
+      sanitizedComponentName
     );
-    fs.mkdirSync(targetDir, { recursive: true });
+    fs.mkdirSync(componentDir, { recursive: true });
 
     // Download manifest
     log('📄 Downloading manifest...', 'blue');
@@ -218,33 +221,64 @@ async function add(componentName, version = 'latest') {
     const manifestData = await fetch(manifestUrl);
     const manifest = JSON.parse(manifestData);
 
-    fs.writeFileSync(path.join(targetDir, 'manifest.json'), manifestData);
+    fs.writeFileSync(path.join(componentDir, 'manifest.json'), manifestData);
 
     // Download component.zip
     log('📦 Downloading component files...', 'blue');
     const zipUrl = `${REGISTRY_URL}/components/${componentName}/${targetVersion}/component.zip`;
-    const zipPath = path.join(targetDir, 'component.zip');
+    const zipPath = path.join(componentDir, 'component.zip');
 
     const zipData = await fetch(zipUrl, true, true); // Show progress, binary
     fs.writeFileSync(zipPath, zipData);
 
-    // Extract component.zip
+    // Extract component.zip to WordPress-style structure
     log('🔓 Extracting component...', 'blue');
     try {
-      execFileSync('unzip', ['-o', zipPath, '-d', targetDir], {
-        stdio: 'inherit',
+      // Use Adm-zip for clean extraction with WordPress-style paths
+      const zip = new AdmZip(zipPath);
+
+      // Extract only the component files, creating WordPress-style structure
+      zip.getEntries().forEach(entry => {
+        if (entry.isDirectory) return;
+
+        // Check if this is a component file we want
+        const entryPath = entry.entryName;
+        const componentPath = `template-parts/components/${sanitizedComponentName}/`;
+
+        if (entryPath.startsWith(componentPath)) {
+          // Extract to WordPress-style paths (flat structure)
+          const relativePath = entryPath.substring(componentPath.length);
+
+          // Convert to WordPress naming convention
+          let fileName = relativePath;
+
+          // Handle main component file
+          if (fileName === 'component.php') {
+            fileName = `${sanitizedComponentName.toLowerCase()}.php`;
+          } else if (fileName === 'styles.css') {
+            fileName = `${sanitizedComponentName.toLowerCase()}.css`;
+          } else if (fileName === 'enhancer.js') {
+            fileName = `${sanitizedComponentName.toLowerCase()}.js`;
+          } else if (fileName === 'README.md') {
+            fileName = 'readme.md';
+          }
+
+          const targetPath = path.join(componentDir, fileName);
+
+          // Ensure target directory exists
+          const targetDirPath = path.dirname(targetPath);
+          fs.mkdirSync(targetDirPath, { recursive: true });
+
+          // Write the file directly to avoid nested paths
+          const fileContent = zip.readAsText(entry);
+          fs.writeFileSync(targetPath, fileContent);
+        }
       });
-      fs.unlinkSync(zipPath); // Remove zip after extraction
+
+      // Clean up zip file
+      fs.unlinkSync(zipPath);
     } catch (err) {
-      warn('Failed to extract with unzip, trying with tar...');
-      try {
-        execFileSync('tar', ['-xf', zipPath, '-C', targetDir], {
-          stdio: 'inherit',
-        });
-        fs.unlinkSync(zipPath);
-      } catch (tarErr) {
-        error(`Failed to extract component: ${tarErr.message}`);
-      }
+      error(`Failed to extract component: ${err.message}`);
     }
 
     // Update installed list
@@ -258,13 +292,13 @@ async function add(componentName, version = 'latest') {
     success(
       `\n🎉 Successfully installed ${sanitizedComponentName}@${targetVersion}!`
     );
-    info(`Component files are ready in: ${targetDir}`);
+    info(`Component files are ready in: ${componentDir}`);
 
     // Show next steps
     log('\n📚 Next steps:', 'bright');
     log('1. Include the component in your theme:', 'white');
     log(
-      `   get_template_part('template-parts/components/${sanitizedComponentName}/${targetVersion}/component')`,
+      `   get_template_part('template-parts/components/${sanitizedComponentName}/${sanitizedComponentName.toLowerCase()}')`,
       'cyan'
     );
     log('2. Customize the component files as needed', 'white');
@@ -277,10 +311,56 @@ async function add(componentName, version = 'latest') {
   }
 }
 
+// Remove a component
+function remove(componentName) {
+  try {
+    const sanitizedComponentName = sanitizeInput(componentName);
+
+    // Load config
+    if (!fs.existsSync(CONFIG_FILE)) {
+      error('wpsyde.json not found. Run "npx wpsyde-ui init" first');
+    }
+
+    const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
+
+    // Check if component is installed
+    if (!config.installed[sanitizedComponentName]) {
+      warn(`Component "${sanitizedComponentName}" is not installed`);
+      return;
+    }
+
+    log(`\n🗑️  Removing ${sanitizedComponentName}...`, 'bright');
+
+    // Remove component directory
+    const componentDir = path.join(
+      config.componentsDir,
+      sanitizedComponentName
+    );
+    if (fs.existsSync(componentDir)) {
+      fs.rmSync(componentDir, { recursive: true, force: true });
+      success(`Removed component directory: ${componentDir}`);
+    }
+
+    // Remove from installed list
+    delete config.installed[sanitizedComponentName];
+    fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
+
+    success(`\n🎉 Successfully removed ${sanitizedComponentName}!`);
+  } catch (err) {
+    error(`Failed to remove component: ${err.message}`);
+  }
+}
+
 // Show help
 function help() {
-  log('\n🚀 WPSyde UI - Professional Component Manager', 'bright');
-  log('==================================================', 'bright');
+  log(
+    '\n🚀 WPSyde UI - Professional Component Manager (WordPress-native)',
+    'bright'
+  );
+  log(
+    '================================================================',
+    'bright'
+  );
   log('\nUsage:', 'cyan');
   log('  npx wpsyde-ui <command> [options]', 'white');
   log('\nCommands:', 'cyan');
@@ -293,12 +373,14 @@ function help() {
     '  add <name> [version]    Install a component (default: latest)',
     'white'
   );
+  log('  remove <name>           Remove an installed component', 'white');
   log('  help                    Show this help message', 'white');
   log('\nExamples:', 'cyan');
   log('  npx wpsyde-ui init', 'white');
   log('  npx wpsyde-ui list', 'white');
   log('  npx wpsyde-ui add Button', 'white');
   log('  npx wpsyde-ui add Card 1.0.0', 'white');
+  log('  npx wpsyde-ui remove Button', 'white');
   log('\nHow it works:', 'cyan');
   log('  • Downloads component files directly from registry', 'white');
   log(
@@ -306,10 +388,10 @@ function help() {
     'white'
   );
   log('  • Full control over component code - customize as needed', 'white');
-  log('  • Similar to shadcn/ui approach', 'white');
+  log('  • WordPress-native component structure', 'white');
   log('\nRequirements:', 'cyan');
   log('  - Node.js (built-in, no npm install needed)', 'white');
-  log('  - unzip or tar command for extraction', 'white');
+  log('  - Pure JavaScript extraction (no external commands)', 'white');
 }
 
 // Main CLI logic
@@ -337,6 +419,14 @@ function main() {
       }
       add(sanitizeInput(args[1]), args[2] ? sanitizeInput(args[2]) : 'latest');
       break;
+    case 'remove':
+      if (!args[1]) {
+        error(
+          'Component name required. Usage: npx wpsyde-ui remove <ComponentName>'
+        );
+      }
+      remove(sanitizeInput(args[1]));
+      break;
     default:
       error(`Unknown command: ${command}. Run "npx wpsyde-ui help" for usage`);
   }
@@ -347,4 +437,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { init, list, add, help, sanitizeInput };
+module.exports = { init, list, add, remove, help, sanitizeInput };

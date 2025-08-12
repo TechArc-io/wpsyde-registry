@@ -1,0 +1,40 @@
+{
+  "name": "Toast",
+  "version": "1.0.0",
+  "description": "Toast",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Toast/component.php",
+      "dest": "theme/template-parts/components/Toast/component.php",
+      "integrity": "sha256-jboQVK92tY/StrkEzwoBZpSCod59+9eVf28JrfExCM8="
+    },
+    {
+      "path": "template-parts/components/Toast/README.md",
+      "dest": "theme/template-parts/components/Toast/README.md",
+      "integrity": "sha256-3fku5+iasqa/46yDzpmd5RlHXatlb7I+Yn3gynh0GtU="
+    },
+    {
+      "path": "template-parts/components/Toast/example.php",
+      "dest": "theme/template-parts/components/Toast/example.php",
+      "integrity": "sha256-8v4bMchaGdoxq6vZMx9vk30kCNPzjaCVB5wBs764ap4="
+    },
+    {
+      "path": "template-parts/components/Toast/enhancer.js",
+      "dest": "theme/template-parts/components/Toast/enhancer.js",
+      "integrity": "sha256-2bLJPWGHOXgsT7Zy6FxhlEHbfsa9uJ5AI2ZzyMn24tE="
+    },
+    {
+      "path": "template-parts/components/Toast/styles.css",
+      "dest": "theme/template-parts/components/Toast/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Toast/1.0.0/component.zip",
+    "integrity": "sha256-01c12c9c2f18428830a5ef95ba045f146218bf5df118868b930e1a02b593801e"
+  },
+  "pro": false,
+  "checksum": "sha256-01c12c9c2f18428830a5ef95ba045f146218bf5df118868b930e1a02b593801e",
+  "signature": ""
+}

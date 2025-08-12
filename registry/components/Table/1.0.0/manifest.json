@@ -1,0 +1,44 @@
+{
+  "name": "Table",
+  "version": "1.0.0",
+  "description": "Table component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Table/component.php",
+      "dest": "template-parts/components/Table/table.php",
+      "integrity": "sha256-odIocVPK+Ggy8oSfOH0L75IYf5esYv32mbvPh+8VF8o="
+    },
+    {
+      "path": "template-parts/components/Table/styles.css",
+      "dest": "template-parts/components/Table/Table.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Table/enhancer.js",
+      "dest": "template-parts/components/Table/table.js",
+      "integrity": "sha256-MxC2kE9+4uchJZcv5Pmo+xFsDIgKXh2wWXIsO6oIA6w="
+    },
+    {
+      "path": "template-parts/components/Table/example.php",
+      "dest": "template-parts/components/Table/example.php",
+      "integrity": "sha256-AITwCwZri8vYc/kpzlu/R4GAtmRHIWL5tWgPJhOrzgI="
+    },
+    {
+      "path": "template-parts/components/Table/README.md",
+      "dest": "template-parts/components/Table/README.md",
+      "integrity": "sha256-48R5RAWDR1EGIUVLIM1fzLU7UYPG946J7WPXSoqDatY="
+    },
+    {
+      "path": "template-parts/components/Table/manifest.json",
+      "dest": "template-parts/components/Table/manifest.json",
+      "integrity": "sha256-oPniS2S4G2T0sNbXrp/SkkBh1gmO62dPSM5jNtwwKDE="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.366Z",
+  "updatedAt": "2025-08-12T22:01:15.366Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-UruMdxHQxhul9plNJSUkMNu25Ut6FDhhFKVOFlb/VPQ="
+  }
+}

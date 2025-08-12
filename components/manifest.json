@@ -1,0 +1,190 @@
+{
+  "registryVersion": 1,
+  "updatedAt": "2025-01-27T00:00:00.000Z",
+  "components": {
+    "Button": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Actions with variants and sizes.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Card": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Surface container for grouping content.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Badge": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Small status pill for labeling.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Input": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Text input field with focus ring.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "SectionHeading": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Title + optional description block.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Accordion": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Collapsible sections.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Alert": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Inline feedback messages.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Avatar": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "User/image avatar.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Breadcrumbs": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Hierarchy navigation.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Checkbox": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Boolean input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Label": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Form label helper.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Modal": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Dialog overlay.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Navbar": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Header navigation bar.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Pagination": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Page navigation controls.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Radio": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Radio group input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Select": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Dropdown select.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Separator": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Horizontal rule/divider.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Switch": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Toggle switch input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Table": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Data table primitives.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Tabs": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Tabbed content navigation.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Textarea": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Multiline input.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Toast": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Transient notifications.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    },
+    "Tooltip": {
+      "latest": "1.0.0",
+      "versions": ["1.0.0"],
+      "description": "Hover/focus information.",
+      "channels": {
+        "stable": "1.0.0"
+      }
+    }
+  }
+}

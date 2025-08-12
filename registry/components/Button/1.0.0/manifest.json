@@ -1,0 +1,44 @@
+{
+  "name": "Button",
+  "version": "1.0.0",
+  "description": "Button component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Button/component.php",
+      "dest": "template-parts/components/Button/button.php",
+      "integrity": "sha256-043XHo08czc/3eGgxe7cnGFlmvfV9SUiyssVgzzqPDo="
+    },
+    {
+      "path": "template-parts/components/Button/styles.css",
+      "dest": "template-parts/components/Button/Button.css",
+      "integrity": "sha256-FfFQmaYHjRHwq4QD+NIzL7g5dqaGzDQAOlvJUtPfzRU="
+    },
+    {
+      "path": "template-parts/components/Button/enhancer.js",
+      "dest": "template-parts/components/Button/button.js",
+      "integrity": "sha256-VP0ewNCcvqcrIEbi5dG3eSpX4Hz9aDTzGa2PPK542tc="
+    },
+    {
+      "path": "template-parts/components/Button/example.php",
+      "dest": "template-parts/components/Button/example.php",
+      "integrity": "sha256-4kqQE/4cEL1NnRPZvMo8cjriZbEz++TlnhQFy+gtPJk="
+    },
+    {
+      "path": "template-parts/components/Button/README.md",
+      "dest": "template-parts/components/Button/README.md",
+      "integrity": "sha256-x5bdTxheKsmVhrcTeyU6nqTOnobpoBxU5i+ssuC//wY="
+    },
+    {
+      "path": "template-parts/components/Button/manifest.json",
+      "dest": "template-parts/components/Button/manifest.json",
+      "integrity": "sha256-rjeFtAsBZeY7qay9WnPgHlvQ0zZ8DDYJZq0RpD+Cs+s="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.340Z",
+  "updatedAt": "2025-08-12T22:01:15.340Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-w46ulOWh1BUmn1hM9ddiQmXZD82e3WlAwGHB1N553Ss="
+  }
+}

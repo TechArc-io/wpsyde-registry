@@ -1,0 +1,40 @@
+{
+  "name": "Tooltip",
+  "version": "1.0.0",
+  "description": "Tooltip",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Tooltip/component.php",
+      "dest": "theme/template-parts/components/Tooltip/component.php",
+      "integrity": "sha256-tQnYCXNqsUwmxg2Qgfje+QvThQD53JzdazxLLRM8drg="
+    },
+    {
+      "path": "template-parts/components/Tooltip/README.md",
+      "dest": "theme/template-parts/components/Tooltip/README.md",
+      "integrity": "sha256-yAIqTCI+4ln/wK50sgtnWM6MTAA2NUtiixVkfC9YUNw="
+    },
+    {
+      "path": "template-parts/components/Tooltip/example.php",
+      "dest": "theme/template-parts/components/Tooltip/example.php",
+      "integrity": "sha256-JrvMh68R3lOxH4vq4qhSk2afJv13DbVKXD9Lgbas8ZY="
+    },
+    {
+      "path": "template-parts/components/Tooltip/enhancer.js",
+      "dest": "theme/template-parts/components/Tooltip/enhancer.js",
+      "integrity": "sha256-ZYvj11SDybwzrciZ0R+mAPj/t+ZVOmISAAwCptCnd/g="
+    },
+    {
+      "path": "template-parts/components/Tooltip/styles.css",
+      "dest": "theme/template-parts/components/Tooltip/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Tooltip/1.0.0/component.zip",
+    "integrity": "sha256-a5a4095a7903a344170cd6dd0d722711e4b9b4ecf828d49fefeb785b49ff8c56"
+  },
+  "pro": false,
+  "checksum": "sha256-a5a4095a7903a344170cd6dd0d722711e4b9b4ecf828d49fefeb785b49ff8c56",
+  "signature": ""
+}

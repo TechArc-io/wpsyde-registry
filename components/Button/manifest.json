@@ -1,0 +1,40 @@
+{
+  "name": "Button",
+  "version": "1.0.0",
+  "description": "Button",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Button/component.php",
+      "dest": "theme/template-parts/components/Button/component.php",
+      "integrity": "sha256-043XHo08czc/3eGgxe7cnGFlmvfV9SUiyssVgzzqPDo="
+    },
+    {
+      "path": "template-parts/components/Button/README.md",
+      "dest": "theme/template-parts/components/Button/README.md",
+      "integrity": "sha256-H58MiiBLc4YU7jmMicKucLGkf3uDLcF+CO2vXKfI9Ng="
+    },
+    {
+      "path": "template-parts/components/Button/example.php",
+      "dest": "theme/template-parts/components/Button/example.php",
+      "integrity": "sha256-4kqQE/4cEL1NnRPZvMo8cjriZbEz++TlnhQFy+gtPJk="
+    },
+    {
+      "path": "template-parts/components/Button/enhancer.js",
+      "dest": "theme/template-parts/components/Button/enhancer.js",
+      "integrity": "sha256-VP0ewNCcvqcrIEbi5dG3eSpX4Hz9aDTzGa2PPK542tc="
+    },
+    {
+      "path": "template-parts/components/Button/styles.css",
+      "dest": "theme/template-parts/components/Button/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Button/1.0.0/component.zip",
+    "integrity": "sha256-0e81da7165303159353ef21ac924099d83d0d387905e2e2f57513dd6c55f4f52"
+  },
+  "pro": false,
+  "checksum": "sha256-0e81da7165303159353ef21ac924099d83d0d387905e2e2f57513dd6c55f4f52",
+  "signature": ""
+}

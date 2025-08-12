@@ -1,0 +1,44 @@
+{
+  "name": "Separator",
+  "version": "1.0.0",
+  "description": "Separator component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Separator/component.php",
+      "dest": "template-parts/components/Separator/separator.php",
+      "integrity": "sha256-HQbMilOnlvgIgDyxyiGpsG830+ArS182QS+5Cwb+ZZQ="
+    },
+    {
+      "path": "template-parts/components/Separator/styles.css",
+      "dest": "template-parts/components/Separator/Separator.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Separator/enhancer.js",
+      "dest": "template-parts/components/Separator/separator.js",
+      "integrity": "sha256-Rg5eBKPQIc9eXjXGu6KKqw5tWoKKBPc6EgLS33xcpXc="
+    },
+    {
+      "path": "template-parts/components/Separator/example.php",
+      "dest": "template-parts/components/Separator/example.php",
+      "integrity": "sha256-S2fcpchFQU0ZhkwKMVRFenaRhmumWSQxuCrlHALb39g="
+    },
+    {
+      "path": "template-parts/components/Separator/README.md",
+      "dest": "template-parts/components/Separator/README.md",
+      "integrity": "sha256-bzjbjc18Ux3w65p2V1V/WvQknDuowvhtoUJGREwY+5M="
+    },
+    {
+      "path": "template-parts/components/Separator/manifest.json",
+      "dest": "template-parts/components/Separator/manifest.json",
+      "integrity": "sha256-vUjb8NBkYvUIF7HRy0Jsg8dBlEVKb3QpKv6yUU68nrc="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.363Z",
+  "updatedAt": "2025-08-12T22:01:15.363Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-HqfU0Ywwln8Vn63LrvhS+MAgm2JEgJPXZp0yqUmXPfs="
+  }
+}

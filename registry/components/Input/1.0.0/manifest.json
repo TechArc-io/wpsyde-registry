@@ -1,0 +1,44 @@
+{
+  "name": "Input",
+  "version": "1.0.0",
+  "description": "Input component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Input/component.php",
+      "dest": "template-parts/components/Input/input.php",
+      "integrity": "sha256-+PecK5nKIQDfQkfQaBvZ0AEqZwmivsaDmPMI3K2Ja70="
+    },
+    {
+      "path": "template-parts/components/Input/styles.css",
+      "dest": "template-parts/components/Input/Input.css",
+      "integrity": "sha256-qTPSSDvhIQJrMs3hEM0+3r7nqzuCsUOQStklo17rZ0I="
+    },
+    {
+      "path": "template-parts/components/Input/enhancer.js",
+      "dest": "template-parts/components/Input/input.js",
+      "integrity": "sha256-7TxnQXdLmPW/9eQu2lXp1D4c7Skwk13WOusvTMWr82c="
+    },
+    {
+      "path": "template-parts/components/Input/example.php",
+      "dest": "template-parts/components/Input/example.php",
+      "integrity": "sha256-gi6XMLmcVD+YNWeiYmBFAoeq72ikSK07Iz3sfvecb0I="
+    },
+    {
+      "path": "template-parts/components/Input/README.md",
+      "dest": "template-parts/components/Input/README.md",
+      "integrity": "sha256-ykcz4hAK/EzuKxLeuEAchU6jf1xZlADf5+AWlBg/IDs="
+    },
+    {
+      "path": "template-parts/components/Input/manifest.json",
+      "dest": "template-parts/components/Input/manifest.json",
+      "integrity": "sha256-I305nX2kW7TkHXK9vs/b4lP2BxxcrQJQQLYbHYxY5tU="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.346Z",
+  "updatedAt": "2025-08-12T22:01:15.347Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-brzqnScOFyr7qbW7KE7uRus8H0/RloQbE386vtRIjdM="
+  }
+}

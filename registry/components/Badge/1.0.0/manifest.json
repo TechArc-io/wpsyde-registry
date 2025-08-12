@@ -1,0 +1,44 @@
+{
+  "name": "Badge",
+  "version": "1.0.0",
+  "description": "Badge component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Badge/component.php",
+      "dest": "template-parts/components/Badge/badge.php",
+      "integrity": "sha256-0vb9DhY+oGtpNpbK4J9qkLq1Flh/c8BpAgnNn9K89Fw="
+    },
+    {
+      "path": "template-parts/components/Badge/styles.css",
+      "dest": "template-parts/components/Badge/Badge.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Badge/enhancer.js",
+      "dest": "template-parts/components/Badge/badge.js",
+      "integrity": "sha256-GpgqYAxE//wX1oVCIqp9gS0m4tbzILngLHTLv1xiyDY="
+    },
+    {
+      "path": "template-parts/components/Badge/example.php",
+      "dest": "template-parts/components/Badge/example.php",
+      "integrity": "sha256-/49pH4N12keQjECsyR+Y+fyQipaeGzV7CbBqpi/13Fo="
+    },
+    {
+      "path": "template-parts/components/Badge/README.md",
+      "dest": "template-parts/components/Badge/README.md",
+      "integrity": "sha256-DOFNgWQk/E1nMDbz/aIobviIdrspnZ11PxDn/W3uWPg="
+    },
+    {
+      "path": "template-parts/components/Badge/manifest.json",
+      "dest": "template-parts/components/Badge/manifest.json",
+      "integrity": "sha256-Dg7qrYR179/Zc5afOz0H9GcH9RBG+dabWt7qX4OynsM="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.337Z",
+  "updatedAt": "2025-08-12T22:01:15.337Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-diUb7slDvfv2wXRCUDNNOgukOBPJGBvqhKU+IJbifxI="
+  }
+}

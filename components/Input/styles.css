@@ -1,0 +1,82 @@
+/* Input Component Styles */
+/* These styles work with the theme system and can be customized */
+
+/* Base input styles */
+[data-wpsyde-input] {
+  /* Smooth transitions for theme changes */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Input variants */
+[data-wpsyde-input][data-variant='default'] {
+  background-color: var(--input);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+[data-wpsyde-input][data-variant='outline'] {
+  background-color: transparent;
+  border: 2px solid var(--border);
+  color: var(--foreground);
+}
+
+[data-wpsyde-input][data-variant='ghost'] {
+  background-color: transparent;
+  border: none;
+  color: var(--foreground);
+}
+
+/* Input sizes */
+[data-wpsyde-input][data-size='sm'] {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  height: 2.25rem;
+}
+
+[data-wpsyde-input][data-size='md'] {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  height: 2.5rem;
+}
+
+[data-wpsyde-input][data-size='lg'] {
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+  height: 3rem;
+}
+
+/* Input states */
+[data-wpsyde-input]:hover {
+  border-color: var(--ring);
+}
+
+[data-wpsyde-input]:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-color: var(--ring);
+}
+
+[data-wpsyde-input]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input with error */
+[data-wpsyde-input][data-error='true'] {
+  border-color: var(--destructive);
+}
+
+[data-wpsyde-input][data-error='true']:focus {
+  outline-color: var(--destructive);
+  border-color: var(--destructive);
+}
+
+/* Input with success */
+[data-wpsyde-input][data-success='true'] {
+  border-color: var(--emerald-500);
+}
+
+[data-wpsyde-input][data-success='true']:focus {
+  outline-color: var(--emerald-500);
+  border-color: var(--emerald-500);
+}

@@ -1,212 +1,118 @@
-## WPSyde Public Registry
+# WPSyde UI
 
-Read-only registry for WPSyde atomic components.
+Professional UI component manager for WordPress (shadcn/ui style).
 
-> **📦 Package Update**: The CLI tool has been renamed from `wpsyde-cli` to `wpsyde-ui` for better clarity. Use `npx wpsyde-ui` for the latest version.
+## 🚀 Quick Start
 
-### 🚀 Installation
-
-**For WordPress users** - Install components in your theme:
+### Install Components in Your WordPress Theme
 
 ```bash
+# Navigate to your theme directory
 cd wp-content/themes/your-theme-name
+
+# Initialize WPSyde
 npx wpsyde-ui init
+
+# Install components
 npx wpsyde-ui add Button
+npx wpsyde-ui add Card
 ```
 
-**For developers** - Set up the registry:
+### Available Commands
 
 ```bash
-git clone https://github.com/TechArc-io/wpsyde-registry.git
-cd wpsyde-registry
+npx wpsyde-ui init          # Initialize wpsyde.json configuration
+npx wpsyde-ui list          # List available components
+npx wpsyde-ui add <name>    # Install a component
+npx wpsyde-ui remove <name> # Remove an installed component
+npx wpsyde-ui help          # Show help message
 ```
 
-- Base URL: https://registry.wpsyde.com
-- Public key: https://registry.wpsyde.com/public-key.pem
-- Catalog: https://registry.wpsyde.com/index.json
-- Components: https://registry.wpsyde.com/components/<Name>/<Version>/{manifest.json, component.zip}
+## 📦 What You Get
 
-### Quick Start
+- **No npm dependencies** - components are copied directly to your theme
+- **Full control** - customize component code as needed
+- **WordPress-native** - proper PHP integration and CSS enqueuing
+- **Professional workflow** - similar to modern component libraries like shadcn/ui
 
-#### For Users (Install Components):
+## 🏗️ Registry Information
 
-1. **Navigate to your WordPress theme directory**:
+This repository serves as the source for the WPSyde component registry:
 
-   ```bash
-   cd wp-content/themes/your-theme-name
-   ```
-
-2. **Initialize WPSyde**:
-
-   ```bash
-   npx wpsyde-ui init
-   ```
-
-3. **Install components**:
-   ```bash
-   npx wpsyde-ui add Button
-   npx wpsyde-ui add Card
-   ```
-
-#### For Developers (Registry Setup):
-
-1. **Configure your project**:
-
-   ```bash
-   # Copy the example config
-   cp wpsyde.json.example wpsyde.json
-
-   # Edit wpsyde.json with your project paths
-   ```
-
-2. **Install components**:
-
-   ```bash
-   # Using the CLI
-   npx wpsyde-ui add Button@1.0.0
-
-   # Or using WP-CLI
-   wp wpsyde add Button
-   ```
-
-3. **Verify your setup**:
-
-   ```bash
-   node scripts/verify-registry.js
-   ```
-
-4. **Format your code** (optional):
-   ```bash
-   pnpm format        # Format all files
-   pnpm format:check  # Check formatting without changing files
-   ```
+- **Base URL**: https://registry.wpsyde.com
+- **Public key**: https://registry.wpsyde.com/public-key.pem
+- **Catalog**: https://registry.wpsyde.com/index.json
+- **Components**: https://registry.wpsyde.com/components/<Name>/<Version>/{manifest.json, component.zip}
 
 ### Caching
 
-- index.json: Cache-Control: public, max-age=60
-- components/\*: Cache-Control: public, max-age=31536000, immutable
-- public-key.pem: Cache-Control: public, max-age=31536000, immutable
+- `index.json`: Cache-Control: public, max-age=60
+- `components/*`: Cache-Control: public, max-age=31536000, immutable
+- `public-key.pem`: Cache-Control: public, max-age=31536000, immutable
 
-### Manifests
+## 🔧 Development
 
-Each manifest contains:
-
-- files[]: { path, dest, integrity } where integrity = sha256-<base64> of each file
-- archives: { zip, integrity } where integrity = sha256-<base64> of the ZIP
-- checksum: sha256-<base64> of the canonical manifest (with signature set to empty)
-- signature: Ed25519 signature (base64) over the canonical manifest
-
-### Build & Sign (run in the theme repo)
+### Available Scripts
 
 ```bash
-# Ensure your private key exists
-export WPSYDE_PRIVATE_KEY_PATH="$HOME/.wpsyde/keys/private.pem"
+# Code quality
+pnpm run format          # Format all files
+pnpm run format:check    # Check formatting without changing
+pnpm run lint            # Run prettier + registry verification
+pnpm run verify          # Verify registry setup
 
-# Build all components at default version
-node node_scripts/build-registry.js
-
-# Build at an explicit version
-node node_scripts/build-registry.js --version=1.0.1
-
-# Build only a subset
-node node_scripts/build-registry.js --only=Button,Card
+# WPSyde CLI
+pnpm run wpsyde          # Run CLI directly
+pnpm run wpsyde:init     # Initialize wpsyde.json
+pnpm run wpsyde:list     # List available components
+pnpm run wpsyde:add      # Add a component
 ```
 
-### Install (in a WordPress theme)
+### Registry Verification
 
 ```bash
-# Uses the Node CLI under the hood (signature + integrity verified, auto-manages wpsyde.json)
-wp wpsyde add Button     # alias of `wp wpsyde install Button`
-wp wpsyde install Button
+# Verify your registry setup
+pnpm run verify
 ```
 
-### Publishing Components
+## 📚 How It Works
 
-1. **Build and package your component**:
+1. **Users install** `npm install wpsyde-ui`
+2. **CLI downloads** components from your live registry at [https://registry.wpsyde.com](https://registry.wpsyde.com)
+3. **Components are extracted** directly to the user's WordPress theme
+4. **No external dependencies** - everything works offline after installation
 
-   ```bash
-   # In your theme repo
-   node node_scripts/build-registry.js --version=1.0.1
-   ```
+## 🎯 Component Structure
 
-2. **Create a feature branch and commit**:
+When you install a component, you get:
 
-   ```bash
-   git checkout -b feat/add-YourComponent-v1.0.1
-   git add components/YourComponent/1.0.1/
-   git commit -m "feat: add YourComponent v1.0.1"
-   git push origin feat/add-YourComponent-v1.0.1
-   ```
-
-3. **Create a Pull Request**:
-   - Go to GitHub and create a PR from your feature branch to `main`
-   - CI automatically runs all validation checks
-   - Code owners review and approve the changes
-
-4. **After PR merge**:
-   - CI automatically deploys to Cloudflare Pages
-   - Purges index.json cache
-   - New component becomes available in the registry
-
-### Installing Components (Professional shadcn/ui Style!)
-
-Users can install components with just **npx** (no npm install needed!):
-
-#### Option 1: Direct npx (Recommended)
-
-```bash
-# Initialize your project
-npx wpsyde-ui init
-
-# List available components
-npx wpsyde-ui list
-
-# Install a component
-npx wpsyde-ui add Button
-npx wpsyde-ui add Card 1.0.0
+```
+your-theme/
+├── components/
+│   └── Button/
+│       ├── Button.css          # Component styles
+│       └── component.php       # WordPress integration
+└── wpsyde.json                 # Configuration
 ```
 
-#### Option 2: With npm/pnpm scripts
-
-```bash
-# If you have package.json with our scripts
-npm run wpsyde:init
-npm run wpsyde:list
-npm run wpsyde:add Button
-
-# Or with pnpm
-pnpm run wpsyde:init
-pnpm run wpsyde:list
-pnpm run wpsyde:add Button
-```
-
-#### Option 3: Copy the CLI script to your project
-
-```bash
-# Copy the CLI script to your theme project
-cp scripts/wpsyde-cli.js /path/to/your/theme/
-
-# Then use it directly
-node wpsyde-cli.js add Button
-```
-
-## How It Works (Like shadcn/ui):
-
-✅ **No npm dependencies** - components are copied directly to your theme  
-✅ **Full control** - customize component code as needed  
-✅ **Version management** - install specific versions or latest  
-✅ **Professional workflow** - similar to modern component libraries
-
-**No global installations, no WP-CLI plugins, no complex setup!** 🎉
-
-### Key Management
+## 🔑 Key Management
 
 - **Rotate signing keys**: Update `public-key.pem` and re-sign all manifests with the new private key
 - **Keep private keys secure**: Never commit `private.pem` to this repo
 - **Key format**: Ed25519 public key in PEM format
 
-### Notes
+## 📝 Notes
 
 - Versions are immutable; publish a new version for changes
 - CI blocks edits to published versioned paths (`components/*/1.0.0/`)
 - All component archives are verified for integrity before deployment
+
+## 🌐 Links
+
+- **Registry**: https://registry.wpsyde.com
+- **NPM Package**: https://www.npmjs.com/package/wpsyde-ui
+- **Repository**: https://github.com/TechArc-io/wpsyde-registry
+
+---
+
+**No global installations, no WP-CLI plugins, no complex setup!** 🎉

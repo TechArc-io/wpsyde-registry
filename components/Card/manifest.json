@@ -1,0 +1,40 @@
+{
+  "name": "Card",
+  "version": "1.0.0",
+  "description": "Card",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "template-parts/components/Card/component.php",
+      "dest": "theme/template-parts/components/Card/component.php",
+      "integrity": "sha256-pmSqNHo6Ozft6lE4ksTFBJI/+8azGiFqQ/79XZXAzNk="
+    },
+    {
+      "path": "template-parts/components/Card/README.md",
+      "dest": "theme/template-parts/components/Card/README.md",
+      "integrity": "sha256-tQ9pHSKBvbC3wVR40YyjnNaYi2kYgUrT820DXKaZUFI="
+    },
+    {
+      "path": "template-parts/components/Card/example.php",
+      "dest": "theme/template-parts/components/Card/example.php",
+      "integrity": "sha256-QBercT2huC74HZx9XzwsBYiDsye5lHcVQ1bvop2lGiI="
+    },
+    {
+      "path": "template-parts/components/Card/enhancer.js",
+      "dest": "theme/template-parts/components/Card/enhancer.js",
+      "integrity": "sha256-zBCBgnwodmtGcVV01BLyHZogHL6BBbXxzuHDhoWJ+Us="
+    },
+    {
+      "path": "template-parts/components/Card/styles.css",
+      "dest": "theme/template-parts/components/Card/styles.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    }
+  ],
+  "archives": {
+    "zip": "https://registry.wpsyde.com/components/Card/1.0.0/component.zip",
+    "integrity": "sha256-200a114961851122590b4e9d0d1a5bb93bfa45e5d40382d120acd3c1fe529cff"
+  },
+  "pro": false,
+  "checksum": "sha256-200a114961851122590b4e9d0d1a5bb93bfa45e5d40382d120acd3c1fe529cff",
+  "signature": ""
+}

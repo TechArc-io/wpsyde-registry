@@ -1,0 +1,44 @@
+{
+  "name": "Navbar",
+  "version": "1.0.0",
+  "description": "Navbar component for WordPress",
+  "files": [
+    {
+      "path": "template-parts/components/Navbar/component.php",
+      "dest": "template-parts/components/Navbar/navbar.php",
+      "integrity": "sha256-IaL97IAcNUr5W+0tOBQE/TS75J5JM9uXciXy/CLeHNM="
+    },
+    {
+      "path": "template-parts/components/Navbar/styles.css",
+      "dest": "template-parts/components/Navbar/Navbar.css",
+      "integrity": "sha256-WL6O+pQVYYj9sIW5JjiyxWLXklk2AfuTtYcNpDxi9Uw="
+    },
+    {
+      "path": "template-parts/components/Navbar/enhancer.js",
+      "dest": "template-parts/components/Navbar/navbar.js",
+      "integrity": "sha256-n6uaYvPjUyIM2bcQpz/gAYMk0LOehB4OsQAMeWRYCXQ="
+    },
+    {
+      "path": "template-parts/components/Navbar/example.php",
+      "dest": "template-parts/components/Navbar/example.php",
+      "integrity": "sha256-5X1hVT32ibJRQDg/MXIbr+bN5F3GUI4YW7m61i02RoY="
+    },
+    {
+      "path": "template-parts/components/Navbar/README.md",
+      "dest": "template-parts/components/Navbar/README.md",
+      "integrity": "sha256-XrTh59Tjte1FkS83ZpOC4Be1+zPsmt+1CAufQBaSflk="
+    },
+    {
+      "path": "template-parts/components/Navbar/manifest.json",
+      "dest": "template-parts/components/Navbar/manifest.json",
+      "integrity": "sha256-l1DuYvf81BIRuQylr8bFF8X+Nz7ddu7Ko5UgruHkNmY="
+    }
+  ],
+  "dependencies": [],
+  "createdAt": "2025-08-12T22:01:15.354Z",
+  "updatedAt": "2025-08-12T22:01:15.354Z",
+  "archives": {
+    "zip": "component.zip",
+    "integrity": "sha256-86MEq30xwB37bRXssEqzhiBWRu9BG6P6lrHHPantc9g="
+  }
+}
