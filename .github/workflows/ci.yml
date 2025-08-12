@@ -38,3 +38,87 @@ jobs:
         run: |
           test -f _headers
 
+  verify-public-key:
+    name: Verify public key
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: test -f public-key.pem
+
+  immutable-versions:
+    name: Enforce immutable versioned paths
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Fail if existing versioned files modified
+        run: |
+          base_ref="${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || 'HEAD^' }}"
+          git diff --name-status "$base_ref"...HEAD \
+            | awk '/^M|^D/ && $2 ~ /^components\/[^/]+\/[0-9]+\.[0-9]+\.[0-9]+\// {print; exit 1}'
+
+  validate-archive-integrity:
+    name: Validate archives.integrity (sha256)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -y && sudo apt-get install -y jq
+      - name: Check each manifest vs zip hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          find components -type f -name manifest.json | while read -r m; do
+            zip_path="$(dirname "$m")/component.zip"
+            test -f "$zip_path"
+            calc="sha256-$(openssl dgst -sha256 -binary "$zip_path" | openssl base64 -A)"
+            want="$(jq -r '.archives.integrity' "$m")"
+            if [ "$calc" != "$want" ]; then
+              echo "Integrity mismatch: $zip_path"
+              echo " expected: $want"
+              echo "   actual: $calc"
+              exit 1
+            fi
+          done
+
+  verify-manifest-signatures:
+    name: Verify manifest signatures (Ed25519)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -y && sudo apt-get install -y jq nodejs npm
+      - name: Install verifier deps
+        run: npm i tweetnacl tweetnacl-util
+      - name: Verify signatures
+        shell: node
+        run: |
+          const fs = require('fs');
+          const nacl = require('tweetnacl');
+          const util = require('tweetnacl-util');
+
+          const pub = fs.readFileSync('public-key.pem','utf8')
+            .replace(/-----.*KEY-----/g,'').replace(/\s+/g,'');
+          const pubKey = Buffer.from(pub, 'base64');
+
+          function canon(obj){ const c = {...obj}; delete c.signature; return JSON.stringify(c); }
+
+          function verifyManifest(path) {
+            const m = JSON.parse(fs.readFileSync(path,'utf8'));
+            if (!m.signature) { throw new Error(`Missing signature in ${path}`); }
+            const msg = util.decodeUTF8(canon(m));
+            const sig = Buffer.from(m.signature, 'base64');
+            if (!nacl.sign.detached.verify(msg, sig, pubKey)) {
+              throw new Error(`Bad signature: ${path}`);
+            }
+          }
+
+          function walk(dir){
+            for (const f of fs.readdirSync(dir)) {
+              const p = `${dir}/${f}`;
+              const st = fs.statSync(p);
+              if (st.isDirectory()) walk(p);
+              else if (f === 'manifest.json') verifyManifest(p);
+              }
+            }
+          walk('components');
+          console.log('All manifest signatures OK');
+

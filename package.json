@@ -1,0 +1,23 @@
+{
+  "name": "wpsyde-registry",
+  "version": "1.0.0",
+  "description": "Public registry for WPSyde atomic components",
+  "private": true,
+  "scripts": {
+    "verify": "node scripts/verify-registry.js",
+    "test": "node scripts/verify-registry.js",
+    "generate-keys": "./scripts/generate-keys.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TechArc-io/wpsyde-registry.git"
+  },
+  "keywords": [
+    "wpsyde",
+    "wordpress",
+    "components",
+    "registry"
+  ],
+  "author": "TechArc.io",
+  "license": "MIT"
+} 
