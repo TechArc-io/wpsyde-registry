@@ -1,577 +1,645 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WPSyde - Professional WordPress UI Components</title>
-    <meta name="description" content="Professional WordPress UI components built with modern standards. Install components directly to your theme with zero dependencies.">
-    <meta name="keywords" content="wordpress, ui, components, wpsyde, shadcn-ui, wordpress-themes">
-    
+    <meta
+      name="description"
+      content="Professional WordPress UI components built with modern standards. Install components directly to your theme with zero dependencies."
+    />
+    <meta
+      name="keywords"
+      content="wordpress, ui, components, wpsyde, shadcn-ui, wordpress-themes"
+    />
+
     <!-- Open Graph -->
-    <meta property="og:title" content="WPSyde - Professional WordPress UI Components">
-    <meta property="og:description" content="Professional WordPress UI components built with modern standards. Install components directly to your theme with zero dependencies.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://registry.wpsyde.com">
-    
+    <meta
+      property="og:title"
+      content="WPSyde - Professional WordPress UI Components"
+    />
+    <meta
+      property="og:description"
+      content="Professional WordPress UI components built with modern standards. Install components directly to your theme with zero dependencies."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://registry.wpsyde.com" />
+
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="WPSyde - Professional WordPress UI Components">
-    <meta name="twitter:description" content="Professional WordPress UI components built with modern standards.">
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="WPSyde - Professional WordPress UI Components"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional WordPress UI components built with modern standards."
+    />
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #1f2937;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        .header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.2s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-        
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 4rem 0 6rem;
-            color: white;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #1f2937;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      .header {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+
+      .nav-links a:hover {
+        opacity: 0.8;
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 4rem 0 6rem;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: #10b981;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #059669;
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      /* Features Section */
+      .features {
+        background: white;
+        padding: 5rem 0;
+        margin-top: -2rem;
+        border-radius: 2rem 2rem 0 0;
+        position: relative;
+      }
+
+      .features h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #1f2937;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .feature-card {
+        background: #f8fafc;
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: #1f2937;
+      }
+
+      .feature-card p {
+        color: #6b7280;
+        line-height: 1.6;
+      }
+
+      /* Installation Section */
+      .installation {
+        background: #f1f5f9;
+        padding: 5rem 0;
+      }
+
+      .installation h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #1f2937;
+      }
+
+      .install-steps {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .step {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #10b981;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .step h3 {
+        color: #10b981;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .step-number {
+        background: #10b981;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      .code-block {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 8px;
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        font-size: 0.875rem;
+        overflow-x: auto;
+        margin: 1rem 0;
+      }
+
+      .code-block .prompt {
+        color: #10b981;
+      }
+
+      /* Components Preview */
+      .components-preview {
+        background: white;
+        padding: 5rem 0;
+      }
+
+      .components-preview h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #1f2937;
+      }
+
+      .components-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .component-card {
+        background: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s;
+      }
+
+      .component-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .component-card h4 {
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+      }
+
+      .component-card .version {
+        color: #10b981;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+
+      /* Footer */
+      .footer {
+        background: #1e293b;
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .footer-links a {
+        color: #cbd5e1;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+          font-size: 2.5rem;
         }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .nav-links {
+          display: none;
         }
-        
+
         .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
         }
-        
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            display: inline-block;
-        }
-        
-        .btn-primary {
-            background: #10b981;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #059669;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        /* Features Section */
-        .features {
-            background: white;
-            padding: 5rem 0;
-            margin-top: -2rem;
-            border-radius: 2rem 2rem 0 0;
-            position: relative;
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1f2937;
-        }
-        
+
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+          grid-template-columns: 1fr;
         }
-        
-        .feature-card {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-        
-        .feature-card p {
-            color: #6b7280;
-            line-height: 1.6;
-        }
-        
-        /* Installation Section */
-        .installation {
-            background: #f1f5f9;
-            padding: 5rem 0;
-        }
-        
-        .installation h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1f2937;
-        }
-        
-        .install-steps {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .step {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid #10b981;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .step h3 {
-            color: #10b981;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .step-number {
-            background: #10b981;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-        
-        .code-block {
-            background: #1e293b;
-            color: #e2e8f0;
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-            font-size: 0.875rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-        
-        .code-block .prompt {
-            color: #10b981;
-        }
-        
-        /* Components Preview */
-        .components-preview {
-            background: white;
-            padding: 5rem 0;
-        }
-        
-        .components-preview h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1f2937;
-        }
-        
+
         .components-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         }
-        
-        .component-card {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            transition: all 0.2s;
-        }
-        
-        .component-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .component-card h4 {
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-        }
-        
-        .component-card .version {
-            color: #10b981;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #1e293b;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
+
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
+          flex-direction: column;
+          text-align: center;
         }
-        
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .components-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">WPSyde</a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#components">Components</a></li>
-                <li><a href="https://github.com/TechArc-io/wpsyde-registry" target="_blank">GitHub</a></li>
-            </ul>
-        </nav>
+      <nav class="nav container">
+        <a href="#" class="logo">WPSyde</a>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#components">Components</a></li>
+          <li>
+            <a
+              href="https://github.com/TechArc-io/wpsyde-registry"
+              target="_blank"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Professional WordPress UI Components</h1>
-            <p>Build beautiful WordPress themes with modern, accessible UI components. Install directly to your theme with zero dependencies - just like shadcn/ui.</p>
-            <div class="cta-buttons">
-                <a href="#installation" class="btn btn-primary">Get Started</a>
-                <a href="#components" class="btn btn-secondary">View Components</a>
-            </div>
+      <div class="container">
+        <h1>Professional WordPress UI Components</h1>
+        <p>
+          Build beautiful WordPress themes with modern, accessible UI
+          components. Install directly to your theme with zero dependencies -
+          just like shadcn/ui.
+        </p>
+        <div class="cta-buttons">
+          <a href="#installation" class="btn btn-primary">Get Started</a>
+          <a href="#components" class="btn btn-secondary">View Components</a>
         </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <div class="container">
-            <h2>Why Choose WPSyde?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Zero Dependencies</h3>
-                    <p>Components are copied directly to your theme. No npm packages, no composer, no external dependencies to manage.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Install components in seconds with our professional CLI tool. No waiting for package managers or build processes.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Fully Customizable</h3>
-                    <p>Complete control over component code. Modify, extend, and style components exactly how you want them.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Production Ready</h3>
-                    <p>Built with accessibility and modern web standards. Components are tested and ready for production use.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Responsive Design</h3>
-                    <p>All components are mobile-first and responsive by default. Works perfectly on all devices and screen sizes.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Version Management</h3>
-                    <p>Install specific versions or always get the latest. Easy updates and rollbacks when needed.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Why Choose WPSyde?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Zero Dependencies</h3>
+            <p>
+              Components are copied directly to your theme. No npm packages, no
+              composer, no external dependencies to manage.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>
+              Install components in seconds with our professional CLI tool. No
+              waiting for package managers or build processes.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Fully Customizable</h3>
+            <p>
+              Complete control over component code. Modify, extend, and style
+              components exactly how you want them.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Production Ready</h3>
+            <p>
+              Built with accessibility and modern web standards. Components are
+              tested and ready for production use.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>
+              All components are mobile-first and responsive by default. Works
+              perfectly on all devices and screen sizes.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Version Management</h3>
+            <p>
+              Install specific versions or always get the latest. Easy updates
+              and rollbacks when needed.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Installation Section -->
     <section class="installation" id="installation">
-        <div class="container">
-            <h2>Installation</h2>
-            <div class="install-steps">
-                <div class="step">
-                    <h3><span class="step-number">1</span> Navigate to Your Theme</h3>
-                    <p>Open your terminal and navigate to your WordPress theme directory:</p>
-                    <div class="code-block">
-                        <span class="prompt">$</span> cd wp-content/themes/your-theme-name
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <h3><span class="step-number">2</span> Initialize WPSyde</h3>
-                    <p>Set up WPSyde in your theme project:</p>
-                    <div class="code-block">
-                        <span class="prompt">$</span> npx wpsyde-ui init
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <h3><span class="step-number">3</span> Install Components</h3>
-                    <p>Start adding components to your theme:</p>
-                    <div class="code-block">
-                        <span class="prompt">$</span> npx wpsyde-ui add Button<br>
-                        <span class="prompt">$</span> npx wpsyde-ui add Card<br>
-                        <span class="prompt">$</span> npx wpsyde-ui add Modal
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <h3><span class="step-number">4</span> Use in Your Theme</h3>
-                    <p>Include components in your WordPress theme files:</p>
-                    <div class="code-block">
-                        &lt;?php get_template_part('template-parts/components/Button/1.0.0/component'); ?&gt;
-                    </div>
-                </div>
+      <div class="container">
+        <h2>Installation</h2>
+        <div class="install-steps">
+          <div class="step">
+            <h3><span class="step-number">1</span> Navigate to Your Theme</h3>
+            <p>
+              Open your terminal and navigate to your WordPress theme directory:
+            </p>
+            <div class="code-block">
+              <span class="prompt">$</span> cd wp-content/themes/your-theme-name
             </div>
+          </div>
+
+          <div class="step">
+            <h3><span class="step-number">2</span> Initialize WPSyde</h3>
+            <p>Set up WPSyde in your theme project:</p>
+            <div class="code-block">
+              <span class="prompt">$</span> npx wpsyde-ui init
+            </div>
+          </div>
+
+          <div class="step">
+            <h3><span class="step-number">3</span> Install Components</h3>
+            <p>Start adding components to your theme:</p>
+            <div class="code-block">
+              <span class="prompt">$</span> npx wpsyde-ui add Button<br />
+              <span class="prompt">$</span> npx wpsyde-ui add Card<br />
+              <span class="prompt">$</span> npx wpsyde-ui add Modal
+            </div>
+          </div>
+
+          <div class="step">
+            <h3><span class="step-number">4</span> Use in Your Theme</h3>
+            <p>Include components in your WordPress theme files:</p>
+            <div class="code-block">
+              &lt;?php
+              get_template_part('template-parts/components/Button/1.0.0/component');
+              ?&gt;
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Components Preview -->
     <section class="components-preview" id="components">
-        <div class="container">
-            <h2>Available Components</h2>
-            <div class="components-grid">
-                <div class="component-card">
-                    <h4>Button</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Card</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Modal</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Input</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Alert</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Badge</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Avatar</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Table</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Tabs</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Toast</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>Tooltip</h4>
-                    <div class="version">v1.0.0</div>
-                </div>
-                <div class="component-card">
-                    <h4>+13 more</h4>
-                    <div class="version">Available</div>
-                </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="/index.json" class="btn btn-primary">View All Components</a>
-            </div>
+      <div class="container">
+        <h2>Available Components</h2>
+        <div class="components-grid">
+          <div class="component-card">
+            <h4>Button</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Card</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Modal</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Input</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Alert</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Badge</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Avatar</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Table</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Tabs</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Toast</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>Tooltip</h4>
+            <div class="version">v1.0.0</div>
+          </div>
+          <div class="component-card">
+            <h4>+13 more</h4>
+            <div class="version">Available</div>
+          </div>
         </div>
+
+        <div style="text-align: center">
+          <a href="/index.json" class="btn btn-primary">View All Components</a>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <p>&copy; 2025 WPSyde. Built with ❤️ by <a href="https://techarcio.io" target="_blank" style="color: #10b981;">TechArc.io</a></p>
-                </div>
-                <ul class="footer-links">
-                    <li><a href="https://github.com/TechArc-io/wpsyde-registry" target="_blank">GitHub</a></li>
-                    <li><a href="https://registry.wpsyde.com/index.json">API</a></li>
-                    <li><a href="https://registry.wpsyde.com/health.json">Status</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <p>
+              &copy; 2025 WPSyde. Built with ❤️ by
+              <a
+                href="https://techarcio.io"
+                target="_blank"
+                style="color: #10b981"
+                >TechArc.io</a
+              >
+            </p>
+          </div>
+          <ul class="footer-links">
+            <li>
+              <a
+                href="https://github.com/TechArc-io/wpsyde-registry"
+                target="_blank"
+                >GitHub</a
+              >
+            </li>
+            <li><a href="https://registry.wpsyde.com/index.json">API</a></li>
+            <li>
+              <a href="https://registry.wpsyde.com/health.json">Status</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
             });
+          }
         });
+      });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(20px)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.1)';
-                header.style.backdropFilter = 'blur(10px)';
-            }
-        });
+      // Add scroll effect to header
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+          header.style.backdropFilter = 'blur(20px)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.1)';
+          header.style.backdropFilter = 'blur(10px)';
+        }
+      });
     </script>
-</body>
-</html> 
+  </body>
+</html>

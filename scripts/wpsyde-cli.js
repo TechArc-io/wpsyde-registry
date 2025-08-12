@@ -3,7 +3,7 @@
 /**
  * WPSyde UI - Professional Component Manager (shadcn/ui style)
  * Usage: npx wpsyde-ui add Button
- * 
+ *
  * This CLI downloads and installs WordPress components from the WPSyde registry.
  * Components are copied directly to your theme directory (no npm dependencies).
  */
@@ -25,7 +25,7 @@ const colors = {
   yellow: '\x1b[33m',
   blue: '\x1b[34m',
   magenta: '\x1b[35m',
-  cyan: '\x1b[36m'
+  cyan: '\x1b[36m',
 };
 
 function log(message, color = 'reset') {
@@ -52,7 +52,7 @@ function warn(message) {
 // HTTP helper with progress
 function fetch(url, showProgress = false, binary = false) {
   return new Promise((resolve, reject) => {
-    const request = https.get(url, (res) => {
+    const request = https.get(url, res => {
       if (res.statusCode !== 200) {
         reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
         return;
@@ -69,10 +69,12 @@ function fetch(url, showProgress = false, binary = false) {
           data += chunk;
         }
         downloaded += chunk.length;
-        
+
         if (showProgress && total) {
           const percent = Math.round((downloaded / total) * 100);
-          process.stdout.write(`\rDownloading... ${percent}% (${downloaded}/${total} bytes)`);
+          process.stdout.write(
+            `\rDownloading... ${percent}% (${downloaded}/${total} bytes)`
+          );
         }
       });
 
@@ -103,7 +105,7 @@ function init() {
     blocksDir: 'theme/template-parts/blocks',
     acfJsonDir: 'acf-json',
     channels: ['stable'],
-    installed: {}
+    installed: {},
   };
 
   fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
@@ -117,10 +119,10 @@ async function list() {
     log('\n📦 Fetching components from registry...', 'blue');
     const indexData = await fetch(`${REGISTRY_URL}/index.json`);
     const index = JSON.parse(indexData);
-    
+
     log('\n📦 Available Components:', 'bright');
     log('========================', 'bright');
-    
+
     Object.entries(index.components).forEach(([name, component]) => {
       const latest = component.latest;
       const versions = component.versions;
@@ -131,8 +133,11 @@ async function list() {
         log(`  Description: ${component.description}`, 'white');
       }
     });
-    
-    log(`\nTotal: ${Object.keys(index.components).length} components available`, 'bright');
+
+    log(
+      `\nTotal: ${Object.keys(index.components).length} components available`,
+      'bright'
+    );
   } catch (err) {
     error(`Failed to fetch components: ${err.message}`);
   }
@@ -145,53 +150,61 @@ async function add(componentName, version = 'latest') {
     if (!fs.existsSync(CONFIG_FILE)) {
       error('wpsyde.json not found. Run "npx wpsyde-ui init" first');
     }
-    
+
     const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
-    
+
     log(`\n🚀 Adding ${componentName}...`, 'bright');
-    
+
     // Fetch component info
     log('📋 Fetching component information...', 'blue');
     const indexData = await fetch(`${REGISTRY_URL}/index.json`);
     const index = JSON.parse(indexData);
-    
+
     // Find component
     if (!index.components[componentName]) {
-      error(`Component "${componentName}" not found. Run "npx wpsyde-ui list" to see available components`);
+      error(
+        `Component "${componentName}" not found. Run "npx wpsyde-ui list" to see available components`
+      );
     }
-    
+
     const component = index.components[componentName];
-    
+
     // Get version
     const versions = component.versions;
     const targetVersion = version === 'latest' ? component.latest : version;
-    
+
     if (!versions.includes(targetVersion)) {
-      error(`Version ${targetVersion} not found for ${componentName}. Available: ${versions.join(', ')}`);
+      error(
+        `Version ${targetVersion} not found for ${componentName}. Available: ${versions.join(', ')}`
+      );
     }
-    
+
     log(`📦 Installing ${componentName}@${targetVersion}`, 'cyan');
-    
+
     // Create directories
-    const targetDir = path.join(config.componentsDir, componentName, targetVersion);
+    const targetDir = path.join(
+      config.componentsDir,
+      componentName,
+      targetVersion
+    );
     fs.mkdirSync(targetDir, { recursive: true });
-    
+
     // Download manifest
     log('📄 Downloading manifest...', 'blue');
     const manifestUrl = `${REGISTRY_URL}/components/${componentName}/${targetVersion}/manifest.json`;
     const manifestData = await fetch(manifestUrl);
     const manifest = JSON.parse(manifestData);
-    
+
     fs.writeFileSync(path.join(targetDir, 'manifest.json'), manifestData);
-    
+
     // Download component.zip
     log('📦 Downloading component files...', 'blue');
     const zipUrl = `${REGISTRY_URL}/components/${componentName}/${targetVersion}/component.zip`;
     const zipPath = path.join(targetDir, 'component.zip');
-    
+
     const zipData = await fetch(zipUrl, true, true); // Show progress, binary
     fs.writeFileSync(zipPath, zipData);
-    
+
     // Extract component.zip
     log('🔓 Extracting component...', 'blue');
     try {
@@ -200,31 +213,38 @@ async function add(componentName, version = 'latest') {
     } catch (err) {
       warn('Failed to extract with unzip, trying with tar...');
       try {
-        execSync(`tar -xf "${zipPath}" -C "${targetDir}"`, { stdio: 'inherit' });
+        execSync(`tar -xf "${zipPath}" -C "${targetDir}"`, {
+          stdio: 'inherit',
+        });
         fs.unlinkSync(zipPath);
       } catch (tarErr) {
         error(`Failed to extract component: ${tarErr.message}`);
       }
     }
-    
+
     // Update installed list
     config.installed[componentName] = {
       version: targetVersion,
-      installedAt: new Date().toISOString()
+      installedAt: new Date().toISOString(),
     };
-    
+
     fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
-    
+
     success(`\n🎉 Successfully installed ${componentName}@${targetVersion}!`);
     info(`Component files are ready in: ${targetDir}`);
-    
+
     // Show next steps
     log('\n📚 Next steps:', 'bright');
     log('1. Include the component in your theme:', 'white');
-    log(`   get_template_part('template-parts/components/${componentName}/${targetVersion}/component')`, 'cyan');
+    log(
+      `   get_template_part('template-parts/components/${componentName}/${targetVersion}/component')`,
+      'cyan'
+    );
     log('2. Customize the component files as needed', 'white');
-    log('3. Run "npx wpsyde-ui list" to see other available components', 'white');
-    
+    log(
+      '3. Run "npx wpsyde-ui list" to see other available components',
+      'white'
+    );
   } catch (err) {
     error(`Failed to add component: ${err.message}`);
   }
@@ -237,9 +257,15 @@ function help() {
   log('\nUsage:', 'cyan');
   log('  npx wpsyde-ui <command> [options]', 'white');
   log('\nCommands:', 'cyan');
-  log('  init                    Initialize wpsyde.json configuration', 'white');
+  log(
+    '  init                    Initialize wpsyde.json configuration',
+    'white'
+  );
   log('  list                    List available components', 'white');
-  log('  add <name> [version]    Install a component (default: latest)', 'white');
+  log(
+    '  add <name> [version]    Install a component (default: latest)',
+    'white'
+  );
   log('  help                    Show this help message', 'white');
   log('\nExamples:', 'cyan');
   log('  npx wpsyde-ui init', 'white');
@@ -248,7 +274,10 @@ function help() {
   log('  npx wpsyde-ui add Card 1.0.0', 'white');
   log('\nHow it works:', 'cyan');
   log('  • Downloads component files directly from registry', 'white');
-  log('  • Copies files to your theme directory (no npm dependencies)', 'white');
+  log(
+    '  • Copies files to your theme directory (no npm dependencies)',
+    'white'
+  );
   log('  • Full control over component code - customize as needed', 'white');
   log('  • Similar to shadcn/ui approach', 'white');
   log('\nRequirements:', 'cyan');
@@ -260,12 +289,12 @@ function help() {
 function main() {
   const args = process.argv.slice(2);
   const command = args[0];
-  
+
   if (!command || command === 'help') {
     help();
     return;
   }
-  
+
   switch (command) {
     case 'init':
       init();
@@ -275,7 +304,9 @@ function main() {
       break;
     case 'add':
       if (!args[1]) {
-        error('Component name required. Usage: npx wpsyde-ui add <ComponentName>');
+        error(
+          'Component name required. Usage: npx wpsyde-ui add <ComponentName>'
+        );
       }
       add(args[1], args[2]);
       break;
@@ -289,4 +320,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { init, list, add, help }; 
+module.exports = { init, list, add, help };
