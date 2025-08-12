@@ -1,0 +1,7 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Treat archives as binary
+*.zip binary
+*.pem text eol=lf
+

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+# Least-privilege by default
+permissions:
+  contents: read
+
+jobs:
+  validate-json:
+    name: Validate registry JSON
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq
+
+      - name: Validate root JSON files
+        run: |
+          jq -e . index.json > /dev/null
+          jq -e . health.json > /dev/null
+
+      - name: Validate component manifests (if any)
+        run: |
+          if [ -d components ]; then
+            find components -type f -name "manifest.json" -print0 | xargs -0 -I{} jq -e . {} > /dev/null
+          fi
+
+      - name: Check critical files exist
+        run: |
+          test -f _headers
+

@@ -1,0 +1,11 @@
+# CODEOWNERS for critical registry files
+
+# Registry metadata and headers
+/index.json                         @asemabdou @asemdevs
+/_headers                           @asemabdou @asemdevs
+/public-key.pem                     @asemabdou @asemdevs
+
+# Component artifacts and manifests
+/components/**/manifest.json        @asemabdou @asemdevs
+/components/**/component.zip        @asemabdou @asemdevs
+
